@@ -1,8 +1,14 @@
 class TreehousesController < ApplicationController
+
   def index
+    raise
     @treehouses = Treehouse.where("location = ? AND capacity >= ?", params[:location], params[:capacity])
+  end
+
+
+  private
 
   def treehouses_params
-    params.require(:location).permit(:capacity)
+    params.require(:treehouses).permit(:capacity, :location, :checkin, :checkout)
   end
 end
