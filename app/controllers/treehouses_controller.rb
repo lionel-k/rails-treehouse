@@ -1,10 +1,8 @@
 class TreehousesController < ApplicationController
 
   def index
-    raise
     @treehouses = Treehouse.where("location = ? AND capacity >= ?", params[:location], params[:capacity])
   end
-
 
   private
 
