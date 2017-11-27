@@ -1,0 +1,53 @@
+.inbox {
+  padding-left: 0px;
+  list-style: none;
+  border: 1px solid #dce0e0;
+  font-size: 14px;
+  margin: 0;
+}
+.message {
+  /* Your turn to design a flexbox message */
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+
+}
+
+.message_name {
+  padding-left: 10px;
+  min-width: 100px;
+}
+
+.message_name h2 {
+  font-size: 13px;
+}
+
+.message_body {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+.message_body p {
+  color: rgba(0,0,0,0.4);
+}
+
+.message_status {
+  min-width: 100px;
+  font-size: 10px;
+}
+
+.text_greylight {
+  color: rgba(0,0,0,0.4);
+}
+
+.text_green {
+  color: green;
+}
+
+.text_red {
+  color: red;
+}
+
+.price {
+  color: black;
+}
