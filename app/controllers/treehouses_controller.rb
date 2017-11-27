@@ -1,0 +1,2 @@
+class TreehousesController < ApplicationController
+end
