@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  checkin: MyString
+  checkout: MyString
+  guests_number: MyString
+  is_confirmed: false
+  user: one
+  treehouse: one
+
+two:
+  checkin: MyString
+  checkout: MyString
+  guests_number: MyString
+  is_confirmed: false
+  user: two
+  treehouse: two
