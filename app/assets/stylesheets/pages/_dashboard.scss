@@ -10,3 +10,15 @@ body {
   max-width: 900px;
   margin: 50px auto;
 }
+
+.visible {
+  opacity: 1;
+}
+
+.accepted {
+  color: #32B796;
+}
+
+.declined {
+  color: red;
+}
