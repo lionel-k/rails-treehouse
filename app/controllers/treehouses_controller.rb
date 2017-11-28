@@ -5,7 +5,11 @@ class TreehousesController < ApplicationController
   before_action :treehouses_params, only: [:index]
 
   def index
-    @treehouses = Treehouse.where("location = ? AND capacity >= ?", params[:treehouses][:location], params[:treehouses][:guests_number])
+    if params[:treehouses][:location].blank?
+      @treehouses = Treehouse.all
+    else
+      @treehouses = Treehouse.where("location = ? AND capacity >= ?", params[:treehouses][:location], params[:treehouses][:guests_number])
+    end
   end
 
   def new

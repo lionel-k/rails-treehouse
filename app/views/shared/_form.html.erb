@@ -1,8 +1,9 @@
-<form action= "/treehouses" class="form-inline">
-  <input type="text" name="treehouses[location]" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Bordeaux">
-  <input type="date" name="treehouses[checkin]" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="CheckIn">
-  <input type="date" name="treehouses[checkout]" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="CheckOut">
-  <select name="treehouses[guests_number]" class="custom-select mb-2 mr-sm-2 mb-sm-0" style="color: black">
+<form action= "/treehouses" class="form-inline custom-select2">
+  <% all_locations = Treehouse.select(:location).map(&:location).uniq %>
+  <%= select_tag 'treehouses[location]', options_for_select(all_locations), class: 'select2 form-control', prompt: "Destination" %>
+  <input type="date" name="treehouses[checkin]" class="form-control" placeholder="CheckIn">
+  <input type="date" name="treehouses[checkout]" class="form-control" placeholder="CheckOut">
+  <select name="treehouses[guests_number]" class="form-control">
     <option value="0" selected>Guests</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -11,3 +12,5 @@
   </select>
   <button type="submit" class="btn btn-primary">Search</button>
 </form>
+
+
