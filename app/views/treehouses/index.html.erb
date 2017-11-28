@@ -1,8 +1,4 @@
-<%= link_to "lien", treehouse_path(Treehouse.first, stuff: params[:treehouses][:location]) %>
-
 <div class="results-wrapper">
-
-
   <div class="main-results-container">
     <div class="results-container text-center">
 
@@ -34,11 +30,11 @@
           </div>
           <% end %>
         </div>
+      <%= link_to treehouse_path(treehouse, x: params[:treehouses][:location], y:params[:treehouses][:checkin]), class: "cabin-card-link" do %>
+      <% end  %>
         <% end %>
       </div>
 
-      <%= link_to treehouse_path(treehouse, x: params[:treehouses][:location], y:params[:treehouses][:checkin]), class: "cabin-card-link" do %>
-      <% end  %>
 
     </div>
 
