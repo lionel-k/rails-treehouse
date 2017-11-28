@@ -1,6 +1,4 @@
 <div class="results-wrapper">
-
-
   <div class="main-results-container">
     <div class="results-container text-center">
 
@@ -17,6 +15,7 @@
         <h5 class="filters-values"><%= params[:treehouses][:guests_number] %></h5>
         <h5 class="filters-names">guests</h5>
         <%= link_to 'Change filters', root_path, class: 'filters-change' %>
+
       </div>
 
       <div class="results-cards">
@@ -31,8 +30,11 @@
           </div>
           <% end %>
         </div>
+      <%= link_to treehouse_path(treehouse, x: params[:treehouses][:location], y:params[:treehouses][:checkin]), class: "cabin-card-link" do %>
+      <% end  %>
         <% end %>
       </div>
+
 
     </div>
 
