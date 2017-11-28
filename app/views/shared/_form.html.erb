@@ -1,4 +1,4 @@
-<form action= "/treehouses" class="form-inline">
+<form action= "/treehouses" class="form-inline custom-select2">
   <% all_locations = Treehouse.select(:location).map(&:location).uniq %>
   <%= select_tag 'treehouses[location]', options_for_select(all_locations), class: 'select2 form-control', prompt: "Choose your destination" %>
   <input type="date" name="treehouses[checkin]" class="form-control" placeholder="CheckIn">
