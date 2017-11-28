@@ -1,12 +1,12 @@
 <div class="container">
 
-      <h1>Your messages</h1>
+      <h1>Your Dashboard</h1>
 
       <!-- Code your tabs here -->
 
       <div class="tabs">
-        <a href="#" class="tab active">Traveling</a>
-        <a href="#" class="tab">Hosting</a>
+        <a href="#" class="tab active">I'm Traveling</a>
+        <a href="#" class="tab">I'm Hosting</a>
       </div>
 
       <ul class="inbox">
@@ -15,49 +15,87 @@
           <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar_sm">
           <div class="message_name">
             <h2>Gab Dehan</h2>
-            <p>17/12/17</p>
+            <h2>Fontainebleau</h2>
           </div>
-          <div class="message_body">
-            <h4><strong>I am not sure yet!</strong></h4>
-            <p>I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?</p>
+          <div class="dates">
+            <h4>Check-In - Check-Out</h4>
+            <p>17/12/17 - 23/12/17</p>
+          </div>
+          <div class="guests">
+            <h4>Guests number</h4>
+            <p><center>4</center></p>
           </div>
           <div class="message_status text_greylight">
-            <h2 class="status text_greylight">Pending</h2>
-            <h2 class="price">€345</h2>
+            <h4 class="status text_greylight">Pending</h4>
+            <h4 class="price">€345</h4>
+          </div>
+          <div class="message_body">
+            <%= link_to "Contact Host", "", class: "btn btn-success" %>
           </div>
         </li>
+
         <li class="message">
           <!-- Code your message here -->
           <img src="https://kitt.lewagon.com/placeholder/users/bpaillard" class="avatar_sm">
           <div class="message_name">
-            <h2>Cecile Veneziani</h2>
-            <p>23/09/17</p>
+            <h2>Gab Dehan</h2>
+            <h2>Fontainebleau</h2>
+          </div>
+          <div class="dates">
+            <h4>Check-In - Check-Out</h4>
+            <p>17/12/17 - 23/12/17</p>
+          </div>
+          <div class="guests">
+            <h4>Guests number</h4>
+            <p><center>4</center></p>
+          </div>
+          <div class="message_status text_greylight">
+            <h4 class="status text_greylight">Accepted</h4>
+            <h4 class="price">€430</h4>
           </div>
           <div class="message_body">
-            <h4><strong>I’ll be glad to welcome you in my cosy flat</strong></h4>
-            <p>I’ll be glad to welcome you in my cosy flat in Lille. When are you arriving exactly?</p>
-          </div>
-          <div class="message_status text_green">
-            <h2 class="status">Accepted</h2>
-            <h2 class="price">€345</h2>
+            <%= link_to "Contact Host", "", class: "btn btn-success" %>
           </div>
         </li>
         <li class="message">
           <!-- Code your message here -->
           <img src="https://kitt.lewagon.com/placeholder/users/rpaillard" class="avatar_sm">
           <div class="message_name">
-            <h2>Jad Joubran</h2>
-            <p>19/08/17</p>
+            <h2>Gab Dehan</h2>
+            <h2>Fontainebleau</h2>
+          </div>
+          <div class="dates">
+            <h4>Check-In - Check-Out</h4>
+            <p>17/12/17 - 23/12/17</p>
+          </div>
+          <div class="guests">
+            <h4>Guests number</h4>
+            <p><center>4</center></p>
+          </div>
+          <div class="message_status text_greylight">
+            <h4 class="status text_greylight">Declined</h4>
+            <h4 class="price">€560</h4>
           </div>
           <div class="message_body">
-            <h4><strong>Hey man! I'm sorry...</strong></h4>
-            <p>Hey man! I'm sorry... I'll be in Amsterdam at these dates.</p>
-          </div>
-          <div class="message_status text_red">
-            <h2 class="status">Declined</h2>
-            <h2 class="price">€560</h2>
+            <%= link_to "Contact Host", "", class: "btn btn-success" %>
           </div>
         </li>
       </ul>
 
     </div>
+
+    <% content_for(:afterjs) do %>
+      <script>
+        console.log("hello");
+      </script>
+    <% end %>`
+
+    <!--  class css visible -->
+    <!-- donner id à tous les elements -->
+    <!-- mettre en variable chaque tab(titre) -->
+    <!-- ajouter eventlistener sur chaque tab qui exrec fction -->
+    <!-- definir fonction -->
+    <!-- enleve la visi à tous et rajoute a celle qui nous interesse -->
+
+
+
