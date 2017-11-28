@@ -1,3 +1,6 @@
+<%= link_to "lien", treehouse_path(Treehouse.first, stuff: params[:treehouses][:location]) %>
+
+
 <div class="containter">
   <div class="row">
     <div class="col-xs-12">
@@ -34,7 +37,7 @@
         </div>
         <img class="cabin-card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
       </div>
-      <%= link_to treehouse_path(treehouse), class: "cabin-card-link" do %>
+      <%= link_to treehouse_path(treehouse, x: params[:treehouses][:location], y:params[:treehouses][:checkin]), class: "cabin-card-link" do %>
       <% end  %>
     </div>
     <% end %>
