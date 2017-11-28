@@ -1,0 +1,101 @@
+<div class="container">
+
+      <h1>Your Dashboard</h1>
+
+      <!-- Code your tabs here -->
+
+      <div class="tabs">
+        <a href="#" class="tab active">I'm Traveling</a>
+        <a href="#" class="tab">I'm Hosting</a>
+      </div>
+
+      <ul class="inbox">
+        <li class="message">
+          <!-- Code your message here -->
+          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar_sm">
+          <div class="message_name">
+            <h2>Gab Dehan</h2>
+            <h2>Fontainebleau</h2>
+          </div>
+          <div class="dates">
+            <h4>Check-In - Check-Out</h4>
+            <p>17/12/17 - 23/12/17</p>
+          </div>
+          <div class="guests">
+            <h4>Guests number</h4>
+            <p><center>4</center></p>
+          </div>
+          <div class="message_status text_greylight">
+            <h4 class="status text_greylight">Pending</h4>
+            <h4 class="price">€345</h4>
+          </div>
+          <div class="message_body">
+            <%= link_to "Contact Host", "", class: "btn btn-success" %>
+          </div>
+        </li>
+
+        <li class="message">
+          <!-- Code your message here -->
+          <img src="https://kitt.lewagon.com/placeholder/users/bpaillard" class="avatar_sm">
+          <div class="message_name">
+            <h2>Gab Dehan</h2>
+            <h2>Fontainebleau</h2>
+          </div>
+          <div class="dates">
+            <h4>Check-In - Check-Out</h4>
+            <p>17/12/17 - 23/12/17</p>
+          </div>
+          <div class="guests">
+            <h4>Guests number</h4>
+            <p><center>4</center></p>
+          </div>
+          <div class="message_status text_greylight">
+            <h4 class="status text_greylight">Accepted</h4>
+            <h4 class="price">€430</h4>
+          </div>
+          <div class="message_body">
+            <%= link_to "Contact Host", "", class: "btn btn-success" %>
+          </div>
+        </li>
+        <li class="message">
+          <!-- Code your message here -->
+          <img src="https://kitt.lewagon.com/placeholder/users/rpaillard" class="avatar_sm">
+          <div class="message_name">
+            <h2>Gab Dehan</h2>
+            <h2>Fontainebleau</h2>
+          </div>
+          <div class="dates">
+            <h4>Check-In - Check-Out</h4>
+            <p>17/12/17 - 23/12/17</p>
+          </div>
+          <div class="guests">
+            <h4>Guests number</h4>
+            <p><center>4</center></p>
+          </div>
+          <div class="message_status text_greylight">
+            <h4 class="status text_greylight">Declined</h4>
+            <h4 class="price">€560</h4>
+          </div>
+          <div class="message_body">
+            <%= link_to "Contact Host", "", class: "btn btn-success" %>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <% content_for(:afterjs) do %>
+      <script>
+        console.log("hello");
+      </script>
+    <% end %>`
+
+    <!--  class css visible -->
+    <!-- donner id à tous les elements -->
+    <!-- mettre en variable chaque tab(titre) -->
+    <!-- ajouter eventlistener sur chaque tab qui exrec fction -->
+    <!-- definir fonction -->
+    <!-- enleve la visi à tous et rajoute a celle qui nous interesse -->
+
+
+

@@ -1,9 +1,9 @@
-<form class="form-inline">
-  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputLocation" placeholder="Bordeaux">
-  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputCheckIn" placeholder="CheckIn">
-  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputCheckOut" placeholder="CheckOut">
-  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectCapacity" style="color: black">
-    <option selected>Guests</option>
+<form action= "/treehouses" class="form-inline">
+  <input type="text" name="treehouses[location]" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Bordeaux">
+  <input type="date" name="treehouses[checkin]" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="CheckIn">
+  <input type="date" name="treehouses[checkout]" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="CheckOut">
+  <select name="treehouses[guests_number]" class="custom-select mb-2 mr-sm-2 mb-sm-0" style="color: black">
+    <option value="0" selected>Guests</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>

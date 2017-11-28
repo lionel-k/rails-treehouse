@@ -8,6 +8,8 @@ gem 'puma'
 gem 'rails', '5.1.4'
 gem 'redis'
 gem 'devise'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem "pundit"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
