@@ -1,11 +1,43 @@
-<div class="container">
+<div class="containter">
   <div class="row">
     <div class="col-xs-12">
-      <ul class="list-inline">
-        <li>r</li>
-        <li>r</li>
-        <li>r</li>
-      </ul>
+      <div class="filters">
+        <div class="filter">
+          <h3><p>Stay in </p><%= params[:treehouses][:location] %></h3>
+        </div>
+        <div class="filter">
+          <h3><p>from </p><%= params[:treehouses][:checkin] %></h3>
+        </div>
+        <div class="filter">
+          <h3><p>to </p><%= params[:treehouses][:checkout] %></h3>
+        </div>
+        <div class="filter">
+          <h3><p>for </p><%= params[:treehouses][:guests_number] %> guests</h3>
+        </div>
+        <a class="filter-change" href="#">
+          <h3>Change filters</h3>
+        </a>
+      </div>
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <% @treehouses.each do |treehouse| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="cabin-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="cabin-card-location"><%= treehouse.location %></div>
+        <div class="cabin-card-title">
+          <h2>**<%= treehouse.title %>**</h2>
+          <p><%= treehouse.price_per_night %> €/nights for <%= treehouse.capacity %> guests</p>
+        </div>
+        <img class="cabin-card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      </div>
+      <%= link_to treehouse_path(treehouse), class: "cabin-card-link" do %>
+      <% end  %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
