@@ -5,6 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
+
+
+
+
+
+
+=======
 require 'faker'
 
 Treehouse.destroy_all
@@ -31,3 +39,4 @@ users.each do |user|
 end
 
 puts 'Seeds finished!'
+>>>>>>> master

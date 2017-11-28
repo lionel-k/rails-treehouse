@@ -1,0 +1,194 @@
+<div class="tree-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "banner.jpg",
+      width: 200, height: 100 %>)">
+  <div class="container">
+    <div class="row">
+          <div class="col-xs-12 col-sm-4">
+              <div class="tree-card-category"></div>
+              <div class="tree-card-description text-center">
+                <h2><%= @treehouse.title %></h2>
+              </div>
+              <a class="tree-card-link" href="#" ></a>
+          </div>
+          <%= link_to '', treehouse_path(params[:id]), class: 'tree-card-link'%>
+        </div>
+    </div>
+  </div>
+
+    <!-- content -->
+        <div class="wrapper-content">
+          <div class="container">
+            <div class="row col-md-8">
+
+              <div class="tabs">
+                <a class="tab active col-xs-12 col-sm-6 col-md-3" href="#infos">
+                  <p>Info</p>
+                  <h3></h3>
+                </a>
+                <a class="tab col-xs-12 col-sm-6 col-md-3" href="#equipment">
+                  <p>Equipment</p>
+                  <h3></h3>
+                </a>
+                <a class="tab col-xs-12 col-sm-6 col-md-3" href="#location">
+                  <p>Location</p>
+                  <h3></h3>
+                </a>
+                <a class="tab col-xs-12 col-sm-6 col-md-3" href="#comments">
+                  <p>Comments</p>
+                  <h3></h3>
+                </a>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="des-icons col-xs-12 col-sm-12 col-md-8">
+                    <i class="fa fa-home col-xs-3" aria-hidden="true"></i>
+                    <i class="fa fa-users col-xs-3" aria-hidden="true"></i>
+                    <i class="fa fa-bed col-xs-3" aria-hidden="true"></i>
+                    <i class="fa fa-tint col-xs-3" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="des-values col-xs-12 col-sm-12 col-md-8">
+                    <h4 class="col-xs-3">Villa</h4>
+                    <h4 class="col-xs-3">10 people</h4>
+                    <h4 class="col-xs-3">5 rooms</h4>
+                    <h4 class="col-xs-3">5 baths</h4>
+                  </div>
+                </div>
+              </div>
+            <div class="container">
+              <div class="row col-md-8">
+              <a id="infos"></a>
+                <div class="infos">
+                  <h2>Infos</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum natus est, provident nihil, quae consectetur quis nulla dignissimos delectus, ipsam hic quisquam omnis blanditiis dolore doloremque, nobis adipisci. Error, eveniet.</p>
+
+                  <h3>Housing</h3>
+                  <p>Housing type : Villa</p>
+                  <p>Capacity : 12</p>
+                  <p>Bedrooms : 6</p>
+                  <p>Bathrooms : 6</p>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row col-md-8">
+              <a id="equipment"></a>
+                <div class="equipment">
+                  <div class="equipment-title"><h2>Equipment</h2>
+                  </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                      <p><i class="fa fa-wifi" aria-hidden="true"> Wifi</i></p>
+                      <p><i class="fa fa-television" aria-hidden="true"> TV</i></p>
+                      <p><i class="fa fa-bicycle" aria-hidden="true"> Vélos</i></p>
+                      <p><i class="fa fa-thermometer-quarter" aria-hidden="true"> Climatisation</i></p>
+                      <p><i class="fa fa-microchip" aria-hidden="true"> Salle à manger</i></p>
+                      <p><i class="fa fa-wpexplorer" aria-hidden="true"> Téléscope</i></p>
+                      <p><i class="fa fa-handshake-o" aria-hidden="true"> Conciergerie</i></p>
+                      <p><i class="fa fa-car" aria-hidden="true"> Voiture</i></p>
+                      <p><i class="fa fa-credit-card" aria-hidden="true"> Carte de crédit acceptée</i></p>
+                      <p><i class="fa fa-cutlery" aria-hidden="true"> Cuisine</i></p>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                      <p><i class="fa fa-bus" aria-hidden="true"> Transports communs</i></p>
+                      <p><i class="fa fa-beer" aria-hidden="true"> Bars</i></p>
+                      <p><i class="fa fa-building" aria-hidden="true"> Appartement</i></p>
+                      <p><i class="fa fa-cab" aria-hidden="true"> Taxis</i></p>
+                      <p><i class="fa fa-camera" aria-hidden="true"> Points de vues</i></p>
+                      <p><i class="fa fa-child" aria-hidden="true"> Pour enfants</i></p>
+                      <p><i class="fa fa-desktop" aria-hidden="true"> Ordinateur</i></p>
+                      <p><i class="fa fa-futbol-o" aria-hidden="true"> Jeux enfants</i></p>
+                      <p><i class="fa fa-hourglass-2" aria-hidden="true"> Timer</i></p>
+                      <p><i class="fa fa-lock" aria-hidden="true"> Sécurisé</i></p>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                      <p><i class="fa fa-map" aria-hidden="true"> Carte</i></p>
+                      <p><i class="fa fa-glass" aria-hidden="true"> Restaurants</i></p>
+                      <p><i class="fa fa-ship" aria-hidden="true">Bateau</i></p>
+                      <p><i class="fa fa-snowflake-o" aria-hidden="true"> Climatisation</i></p>
+                      <p><i class="fa fa-shopping-bag" aria-hidden="true"> Shapping center</i></p>
+                      <p><i class="fa fa-suitcase" aria-hidden="true"> Baggages</i></p>
+                      <p><i class="fa fa-university" aria-hidden="true"> Sites historiques</i></p>
+                      <p><i class="fa fa-video-camera" aria-hidden="true"> Belles photos</i></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <div class="container">
+          <div class="row col-md-8">
+          <div class="location">
+          <a id="location"></a>
+          <!-- <div class="locat"> -->
+            <h2>Location</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem soluta facilis dolore voluptates qui incidunt ad, sit sed maxime! Suscipit, debitis, recusandae? Repellendus dignissimos, fuga, sed commodi corporis provident id!</p>
+            <img src="images/localisation.png" class="img-responsive" alt="Responsive image">
+
+            <h2>Around</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit pariatur, reiciendis? Atque sunt, qui, rem voluptate dolore ipsum voluptates. Id sit, sapiente voluptatum molestiae placeat reprehenderit ipsa temporibus voluptate accusamus!</p>
+            </div>
+         </div>
+        </div>
+
+
+        <div class="container">
+          <div class="row col-md-8">
+          <a id="comments"></a>
+
+          <h2>Comments</h2>
+
+            <ul class="inbox">
+              <li class="message">
+                <!-- Code your message here -->
+                <img src="images/gab.png" class="avatar_sm">
+                <div class="message_name">
+                  <h2>Gab Dehan</h2>
+                  <p>10/07/17</p>
+                </div>
+                <div class="message_body">
+                  <h4><strong>I am not sure yet!</strong></h4>
+                  <p>I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?</p>
+                </div>
+              </li>
+              <li class="message">
+                <!-- Code your message here -->
+                <img src="images/cecile.png" class="avatar_sm">
+                <div class="message_name">
+                  <h2>Cecile Veneziani</h2>
+                  <p>23/09/17</p>
+                </div>
+                <div class="message_body">
+                  <h4><strong>I’ll be glad to welcome you in my cosy flat</strong></h4>
+                  <p>I’ll be glad to welcome you in my cosy flat in Lille. When are you arriving exactly?</p>
+                </div>
+              </li>
+              <li class="message">
+                <!-- Code your message here -->
+                <img src="images/jad.png" class="avatar_sm">
+                <div class="message_name">
+                  <h2>Jad Joubran</h2>
+                  <p>19/08/17</p>
+                </div>
+                <div class="message_body">
+                  <h4><strong>Hey man! I'm sorry...</strong></h4>
+                  <p>Hey man! I'm sorry... I'll be in Amsterdam at these dates.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+      </div>
+      </div>
+      <!-- fin row -->
+
+<!-- bid part -->
+
+          <div class="bidding-part col-md-4">
+          </div>
+<!-- fin input bid -->
+</div>
+
+
+
