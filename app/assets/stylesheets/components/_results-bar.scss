@@ -1,0 +1,84 @@
+.results-wrapper {
+  height: 80vh;
+  background-color: #faf9f8;
+}
+
+.main-results-container {
+  display: flex;
+}
+
+.results-container {
+  flex: 1 1 auto;
+}
+
+.results-container h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+}
+
+.results-container p {
+  font-family: "Open Sans", sans-serif;
+  color: rgba(160, 160, 160, 0.8);
+  letter-spacing: 5px;
+  text-shadow: 1px 2px rgba(255, 255, 255, 1);
+}
+
+#results-map {
+  flex: 0 0 450px;
+  height: 80vh;
+  position: sticky !important;
+  top: 0 !important;
+  background-color: grey;
+}
+
+.results-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.filters-names {
+  font-weight: bold;
+  color: rgba(10, 10, 10, 0.9);
+  margin: 10px 5px;
+  padding: 5px 0px 5px 10px;
+  font-size: 16px;
+}
+
+.filters-names:last-child {
+  padding: 5px 0px 5px 0px;
+}
+
+.filters-values {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 10px 5px;
+  padding: 10px 30px;
+  border: 1px solid rgba(230, 230, 230, 0.8);
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+.filters-change {
+  background-color: $green;
+  border-radius: 2px;
+  color: rgba(250, 250, 250, 1);
+  margin: 0 5px 0 30px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  padding: 20px 10px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.filters-change:hover {
+  color: rgba(255, 255, 255, 1);
+  opacity: 0.8;
+}
+
+a .filters-change {
+  text-decoration: none;
+}

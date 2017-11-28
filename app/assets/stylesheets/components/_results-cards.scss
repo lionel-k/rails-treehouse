@@ -1,0 +1,44 @@
+.results-cards {
+  padding: 10px 5px;
+}
+
+.results-picture {
+  height: 175px;
+  background-size: cover !important;
+  background-position: center;
+  position: relative;
+  border-radius: 1px;
+  margin: 5px 5px 0 5px;
+}
+
+.results-detail {
+  height: 80px;
+  position: relative;
+  border-radius: 1px;
+  margin: 0px 5px 20px 5px;
+  border: 1px solid rgba(230,230,230,0.9);
+}
+
+.results-detail > h4 {
+  font-size: 20px;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  color: rgba(55, 55, 55, 0.9);
+}
+
+.results-detail > p {
+  font-size: 15px;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  color: #119cab;
+  letter-spacing: 1px;
+}
+
+.light-words {
+  font-weight: lighter;
+  color: rgba(150, 150, 150, 0.8);
+}
+
