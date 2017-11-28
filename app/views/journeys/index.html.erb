@@ -10,76 +10,37 @@
       </div>
 
       <ul class="inbox">
+        <% @journeys.each do |journey| %>
         <li class="message">
           <!-- Code your message here -->
           <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar_sm">
           <div class="message_name">
-            <h2>Gab Dehan</h2>
-            <h2>Fontainebleau</h2>
+            <h2><%= journey.user.email %></h2>
+            <h2><%= journey.treehouse.location %></h2>
           </div>
           <div class="dates">
             <h4>Check-In - Check-Out</h4>
-            <p>17/12/17 - 23/12/17</p>
+            <p><%= journey.checkin %>-<%= journey.checkout %></p>
           </div>
           <div class="guests">
             <h4>Guests number</h4>
-            <p><center>4</center></p>
+            <p><center><%= journey.guests_number %></center></p>
           </div>
           <div class="message_status text_greylight">
-            <h4 class="status text_greylight">Pending</h4>
+            <h4 class="status text_greylight">
+              <% if journey.is_confirmed %>
+                <div class="accepted"><%= "Accepted" %></div>
+                <% else %>
+                <div class="declined"><%= "Declined" %></div>
+                <% end %>
+              </h4>
             <h4 class="price">€345</h4>
           </div>
           <div class="message_body">
             <%= link_to "Contact Host", "", class: "btn btn-success" %>
           </div>
         </li>
-
-        <li class="message">
-          <!-- Code your message here -->
-          <img src="https://kitt.lewagon.com/placeholder/users/bpaillard" class="avatar_sm">
-          <div class="message_name">
-            <h2>Gab Dehan</h2>
-            <h2>Fontainebleau</h2>
-          </div>
-          <div class="dates">
-            <h4>Check-In - Check-Out</h4>
-            <p>17/12/17 - 23/12/17</p>
-          </div>
-          <div class="guests">
-            <h4>Guests number</h4>
-            <p><center>4</center></p>
-          </div>
-          <div class="message_status text_greylight">
-            <h4 class="status text_greylight">Accepted</h4>
-            <h4 class="price">€430</h4>
-          </div>
-          <div class="message_body">
-            <%= link_to "Contact Host", "", class: "btn btn-success" %>
-          </div>
-        </li>
-        <li class="message">
-          <!-- Code your message here -->
-          <img src="https://kitt.lewagon.com/placeholder/users/rpaillard" class="avatar_sm">
-          <div class="message_name">
-            <h2>Gab Dehan</h2>
-            <h2>Fontainebleau</h2>
-          </div>
-          <div class="dates">
-            <h4>Check-In - Check-Out</h4>
-            <p>17/12/17 - 23/12/17</p>
-          </div>
-          <div class="guests">
-            <h4>Guests number</h4>
-            <p><center>4</center></p>
-          </div>
-          <div class="message_status text_greylight">
-            <h4 class="status text_greylight">Declined</h4>
-            <h4 class="price">€560</h4>
-          </div>
-          <div class="message_body">
-            <%= link_to "Contact Host", "", class: "btn btn-success" %>
-          </div>
-        </li>
+        <% end %>
       </ul>
 
     </div>
