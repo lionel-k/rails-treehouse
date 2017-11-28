@@ -1,7 +1,7 @@
 class JourneysController < ApplicationController
 
   def index
-    @journeys = Journey.all
+    @journeys = policy_scope(Journey).order(created_at: :desc)
   end
 
   def create
