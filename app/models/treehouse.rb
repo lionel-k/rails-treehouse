@@ -5,8 +5,9 @@ class Treehouse < ApplicationRecord
   validates :price_per_night, presence: true, numericality: { greater_than: 0 }
   validates :capacity, presence: true, inclusion: { in: [1, 2, 3, 4] }
 
-  # geocoded_by :location # Caused an issue to Lionel in local dev
-  # after_validation :geocode, if: :location_changed?
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 
   mount_uploader :photo, PhotoUploader
 end
+g
