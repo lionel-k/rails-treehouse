@@ -12,7 +12,7 @@ amael = User.create(email: 'amael@mail.com', password: "123456")
 
 [lionel, amelie, anthony, amael].each { |member| users << member }
 
-locations = ["Paris", "Bordeaux", "Lyon", "Charenton", "Annecy", "Antibes", "Lille"]
+locations = ["Paris", "Bordeaux", "Lyon", "Charenton", "Annecy", "Marseille", "Lille"]
 
 treehouses = [
   {
@@ -100,7 +100,7 @@ treehouses.each do |treehouse|
     location: locations.sample,
     price_per_night: (40..200).to_a.sample,
     capacity: [2, 4].sample,
-    user: users.sample)
+    user: lionel)
   t.remote_photo_url = treehouse[:image]
   t.save
 end
