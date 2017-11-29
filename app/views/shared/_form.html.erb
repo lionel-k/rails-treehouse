@@ -1,16 +1,8 @@
-<form action= "/treehouses" class="form-inline custom-select2">
+<%= simple_form_for :treehouses, :url => "/treehouses", method: "get", html: {class: 'form-inline custom-select2'} do |f| %>
   <% all_locations = Treehouse.select(:location).map(&:location).uniq %>
-  <%= select_tag 'treehouses[location]', options_for_select(all_locations), class: 'select2 form-control', prompt: "Destination" %>
-  <input type="date" name="treehouses[checkin]" class="form-control" placeholder="CheckIn">
-  <input type="date" name="treehouses[checkout]" class="form-control" placeholder="CheckOut">
-  <select name="treehouses[guests_number]" class="form-control">
-    <option value="0" selected>Guests</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-  </select>
-  <button type="submit" class="btn btn-primary">Search</button>
-</form>
-
-
+  <%= f.input :location, :collection => all_locations, prompt: "Choose a destination", input_html: { class: 'select2 form-control' }, label: false %>
+  <%= f.input :checkin, as: :string, required: false, input_html: { id: "range_start", class: "datepicker text-center" }, label: false, placeholder: "CheckIn" %>
+  <%= f.input :checkout, as: :string, required: false, input_html: { id: "range_end", class: "datepicker text-center" }, label: false, placeholder: "CheckOut" %>
+  <%= f.input :guests_number, :collection => [1, 2, 3, 4], label: false, prompt: "Guests" %>
+  <%= f.button :submit, "Search", class: "btn btn-primary" %>
+<% end %>
