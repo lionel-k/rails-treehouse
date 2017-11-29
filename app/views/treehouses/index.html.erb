@@ -22,8 +22,8 @@
       <div class="results-cards">
         <% @treehouses.each do |treehouse| %>
         <div class="col-xs-12 col-sm-4">
-          <%= link_to treehouse_path(treehouse, x: params[:treehouses][:location], y: params[:treehouses][:checkin], z: params[:treehouses][:checkout], a: params[:treehouses][:guests_number], b: params[:treehouses][:price_per_night]) do %>
-          <div class="results-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('assets/treehouse_default.jpg');">
+          <%= link_to treehouse_path(treehouse) , x: params[:treehouses][:location], y: params[:treehouses][:checkin], z: params[:treehouses][:checkout], a: params[:treehouses][:guests_number]) do %>
+          <div class="results-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path treehouse.photo, height: 300, width: 400, crop: :fill if treehouse.photo.present? %>');">
           </div>
           <div class="results-detail">
             <h4><%= treehouse.title %></h4>
