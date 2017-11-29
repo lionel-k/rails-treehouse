@@ -3,6 +3,7 @@ class Journey < ApplicationRecord
   belongs_to :treehouse
 
   def total_price
-    @total_price = (Date.parse[:checkout] - Date.parse[:checkin]) * :price_per_night
+    diff_days = Date.parse(self.checkout).mjd - Date.parse(self.checkin).mjd
+    self.treehouse.price_per_night * diff_days
   end
 end
