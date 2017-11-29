@@ -34,7 +34,7 @@
                 <div class="declined"><%= "Declined" %></div>
                 <% end %>
               </h4>
-            <h4 class="price">€345</h4>
+            <h4 class="price"><%= @total_price %></h4>
           </div>
           <div class="message_body">
             <%= link_to "Contact Host", "", class: "btn btn-success" %>
@@ -45,11 +45,6 @@
 
     </div>
 
-    <% content_for(:afterjs) do %>
-      <script>
-        console.log("hello");
-      </script>
-    <% end %>`
 
     <!--  class css visible -->
     <!-- donner id à tous les elements -->
