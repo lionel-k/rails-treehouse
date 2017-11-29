@@ -6,11 +6,13 @@ class JourneysController < ApplicationController
 
   def create
     @journey = Journey.new(journey_params)
+    @journey.treehouse = Treehouse.find(params[:treehouse_id])
     @journey.user_id = current_user.id
+    authorize @journey
     if @journey.save
       redirect_to journeys_path
     else
-      redirect_to treehouse_path
+      render "treehouses#show"
     end
   end
 
