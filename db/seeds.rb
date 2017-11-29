@@ -19,16 +19,14 @@ end
 location = ["Paris", "Bordeaux", "Lyon", "Charenton", "Annecy", "Antibes", "Lille"]
 
 users.each do |user|
-  Treehouse.create(title: Faker::Overwatch.location, description: Faker::GameOfThrones.house, location: location.sample, price_per_night: 30, capacity: [2, 4].sample, user: user)
-  Treehouse.create(title: Faker::Overwatch.location, description: Faker::GameOfThrones.house, location: location.sample, price_per_night: 30, capacity: [2, 4].sample, user: user)
-end
-
-location = ["Paris", "Bordeaux", "Lyon", "Charenton", "Annecy", "Antibes"]
-
-users.each do |user|
-  Treehouse.create(title: Faker::Simpsons.location, description: Faker::TheFreshPrinceOfBelAir.quote, location: location.sample, price_per_night: 30, capacity: [2, 4].sample, user: user)
-  Treehouse.create(title: Faker::Simpsons.location, description: Faker::TheFreshPrinceOfBelAir.quote, location: location.sample, price_per_night: 30, capacity: [2, 4].sample, user: user)
-  Treehouse.create(title: Faker::Simpsons.location, description: Faker::TheFreshPrinceOfBelAir.quote, location: location.sample, price_per_night: 30, capacity: [2, 4].sample, user: user)
+  3.times do
+    Treehouse.create!(title: Faker::Overwatch.location,
+      description: Faker::GameOfThrones.house,
+      location: location.sample,
+      price_per_night: (40..200).to_a.sample,
+      capacity: [2, 4].sample,
+      user: user)
+  end
 end
 
 puts 'Seeds finished!'
