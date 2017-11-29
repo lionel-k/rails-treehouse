@@ -29,6 +29,21 @@
         </a>
       </div>
       <div class="container">
+        <div class="row col-md-8">
+        <a id="infos"></a>
+          <div class="infos">
+            <h2>Description</h2>
+            <p><%= @treehouse.description %></p>
+
+            <h3>Housing</h3>
+            <p>Housing type : Toolshed</p>
+            <p>Capacity : <%=  @treehouse.capacity %></p>
+            <p>Bedrooms : 2</p>
+            <p>Bathroom : 1</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-8">
             <i class="fa fa-home col-xs-3" aria-hidden="true"></i>
@@ -45,21 +60,6 @@
             <h4 class="col-xs-3"><%=  @treehouse.capacity %> people</h4>
             <h4 class="col-xs-3">2 rooms</h4>
             <h4 class="col-xs-3">1 bath</h4>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row col-md-8">
-        <a id="infos"></a>
-          <div class="infos">
-            <h2>Description</h2>
-            <p><%= @treehouse.description %></p>
-
-            <h3>Housing</h3>
-            <p>Housing type : Toolshed</p>
-            <p>Capacity : <%=  @treehouse.capacity %></p>
-            <p>Bedrooms : 2</p>
-            <p>Bathroom : 1</p>
           </div>
         </div>
       </div>
