@@ -13,14 +13,14 @@
         <% @journeys.each do |journey| %>
         <li class="message">
           <!-- Code your message here -->
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar_sm">
+          <img src="https://kitt.lewagon.com/placeholder/users/abszam79" class="avatar_sm">
           <div class="message_name">
-            <h2><%= journey.user.email %></h2>
+            <h2><strong><%= journey.treehouse.user.email.split("@")[0].capitalize %></strong></h2>
             <h2><%= journey.treehouse.location %></h2>
           </div>
           <div class="dates">
             <h4>Check-In - Check-Out</h4>
-            <p><%= journey.checkin %>-<%= journey.checkout %></p>
+            <p><%= journey.checkin %>   -   <%= journey.checkout %></p>
           </div>
           <div class="guests">
             <h4>Guests number</h4>
@@ -31,10 +31,10 @@
               <% if journey.is_confirmed %>
                 <div class="accepted"><%= "Accepted" %></div>
                 <% else %>
-                <div class="declined"><%= "Declined" %></div>
+                <div class="declined"><%= "Pending" %></div>
                 <% end %>
               </h4>
-            <h4 class="price"><%= @total_price %></h4>
+            <h4 class="price"><%= journey.total_price %>€</h4>
           </div>
           <div class="message_body">
             <%= link_to "Contact Host", "", class: "btn btn-success" %>

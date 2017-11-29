@@ -12,10 +12,6 @@ amael = User.create(email: 'amael@mail.com', password: "123456")
 
 [lionel, amelie, anthony, amael].each { |member| users << member }
 
-2.times  do
-  users << User.create(email: Faker::Internet.email, password: "123456")
-end
-
 locations = ["Paris", "Bordeaux", "Lyon", "Charenton", "Annecy", "Antibes", "Lille"]
 
 treehouses = [
