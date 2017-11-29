@@ -7,4 +7,6 @@ class Treehouse < ApplicationRecord
 
   # geocoded_by :location # Caused an issue to Lionel in local dev
   # after_validation :geocode, if: :location_changed?
+
+  mount_uploader :photo, PhotoUploader
 end
