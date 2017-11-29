@@ -5,6 +5,7 @@ class TreehousesController < ApplicationController
   before_action :treehouses_params, only: [:index]
 
   def index
+    raise
     if params[:treehouses][:location].blank?
       @treehouses = Treehouse.all
     else
