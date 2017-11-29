@@ -10,6 +10,8 @@ gem 'redis'
 gem 'devise'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem "pundit"
+gem "geocoder"
+gem 'figaro'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
