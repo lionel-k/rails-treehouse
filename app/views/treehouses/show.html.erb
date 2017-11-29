@@ -162,11 +162,13 @@
       <p><%= @treehouse.price_per_night%> € per night</p>
       </div>
       <form action= "/journeys" class="form-inline">
-        <input type="text" name="treehouses[checkin]" class="form-control" value=<%= Date.parse(params["y"]) %>>
+        <label>CheckIn</label>
         <input type="date" name="treehouses[checkin]" class="form-control mb-2 mr-sm-2 mb-sm-0 form-show" value=<%= Date.parse(params["y"]) %>>
-        <input type="date" name="treehouses[checkout]" class="form-control mb-2 mr-sm-2 mb-sm-0 form-show" placeholder="CheckOut">
+        <label>CheckOut</label>
+        <input type="date" name="treehouses[checkout]" class="form-control mb-2 mr-sm-2 mb-sm-0 form-show" value=<%= Date.parse(params["z"]) %>>
+        <label>Guests</label>
         <select name="treehouses[guests_number]" class="custom-select mb-2 mr-sm-2 mb-sm-0 form-show" style="color: black">
-          <option value="0" selected>Guests</option>
+          <option selected="selected"><%= params["a"]%></option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
