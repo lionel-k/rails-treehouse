@@ -1,0 +1,152 @@
+.bidding-part{
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0px;
+    border: 1px solid #e4e4e4;
+    background-color: #ffffff;
+}
+
+.price {
+  margin-top: 20px;
+
+}
+
+#booking-clean {
+  margin-bottom: 20px;
+}
+
+.form-show {
+  margin: 20px;
+}
+.card-show {
+  height: 400px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+.card-show-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-show-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.card-show-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-show-description h2 {
+  font-size: 24px;
+}
+.card-show-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-show-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-show-link:hover {
+  opacity: 0.1;
+}
+
+
+.tabs {
+  display: flex;
+  padding: 10px 10px 0 10px;
+  margin: 5px;
+  margin-bottom: 20px;
+}
+
+
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.tab {
+  opacity: 0.3;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom :5px solid transparent;
+  color: black;
+}
+
+.tab.active {
+  opacity: 1;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom :5px solid #00A699;
+  color: black;
+}
+
+.avatar_sm {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.avatar-large {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+
+.inbox {
+  padding-left: 0px;
+  list-style: none;
+  border-top: 1px solid #dce0e0;
+  font-size: 14px;
+  margin: 0;
+}
+.message {
+  /* Your turn to design a flexbox message */
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+
+}
+
+.message_name {
+  padding-left: 10px;
+  min-width: 100px;
+}
+
+.message_name h2 {
+  font-size: 13px;
+}
+
+.message_body {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+.message_body p {
+  color: rgba(0,0,0,0.4);
+}
+
+.message_status {
+  min-width: 100px;
+}
