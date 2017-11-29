@@ -157,7 +157,7 @@
 <!-- bid part -->
     <div class="bidding-part col-md-4 text-center">
       <div class="price">
-      <p><%= @treehouse.price_per_night%> € per night</p>
+      <p id="price_per_night"><%= @treehouse.price_per_night%>€ per night</p>
       </div>
 
 
@@ -167,9 +167,8 @@
     <%= f.input :guests_number, :collection => [1, 2, 3, 4], label: false, prompt: "Guests", selected: params["a"] %>
     <%= f.button :submit, "Reservation Request", class: "btn btn-danger" %>
 
-      <div class="price">
-      <p>
-      </p>
+      <div id="total_price">
+
       </div>
 
   <% end %>
@@ -180,12 +179,12 @@
 
 <%= content_for(:after_js) do %>
 <script type="text/javascript">
-  const days = <%= Date.parse(params["z"]) - Date.parse(params["y"]) %>;
-  const price = <%= @treehouse.price_per_night %> ;
-  const total_price = price * days;
-  console.log(total_price);
-  const element = document.querySelector(".price");
-  console.log(element.innerText);
+  // const days = <%= Date.parse(params["z"]) - Date.parse(params["y"]) %>;
+  // const price = <%= @treehouse.price_per_night %> ;
+  // const total_price = price * days;
+  // console.log(total_price);
+  // const element = document.querySelector(".price");
+  // console.log(element.innerText);
 </script>
 <% end %>
 
