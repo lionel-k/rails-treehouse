@@ -10,6 +10,14 @@ class TreehousesController < ApplicationController
     else
       @treehouses = Treehouse.where("location = ? AND capacity >= ?", params[:treehouses][:location], params[:treehouses][:guests_number])
     end
+    treehouses_flags = Treehouse.where.not(latitude: nil, longitude: nil)
+    @markers = treehouses_flags.map do |treehouse|
+      {
+        lat: treehouse.latitude,
+        lng: treehouse.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def new
