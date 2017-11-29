@@ -13,3 +13,5 @@ console.log(price);
 const total_price = price * diffDays;
 console.log(total_price);
 document.getElementById("total_price").innerHTML = '<p> Total: ' + total_price + '€</p>'
+
+console.log("from total_price")
