@@ -10,4 +10,3 @@ class Treehouse < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 end
-g
