@@ -1,6 +1,6 @@
 function autocomplete() {
   document.addEventListener("DOMContentLoaded", function() {
-    var treehouseLocation = document.getElementById('treehouse_location');
+    var treehouseLocation = document.getElementById("treehouse_location");
 
     if (treehouseLocation) {
       var autocomplete = new google.maps.places.Autocomplete(treehouseLocation, { types: [ 'geocode' ] });
