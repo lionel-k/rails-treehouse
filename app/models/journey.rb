@@ -5,7 +5,6 @@ class Journey < ApplicationRecord
 
   def self.hostings(user)
     owner_treehouses = Treehouse.where(user: user)
-    return Journey.all
     hostings = []
     Journey.all.each do |journey|
       hostings << journey if journey.treehouse.user == user

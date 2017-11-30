@@ -59,11 +59,11 @@
         <% my_hostings.each do |journey| %>
         <li class="message">
 
-          <img src="https://kitt.lewagon.com/placeholder/users/bpaillard" class="avatar_sm">
+          <!-- <img src="https://kitt.lewagon.com/placeholder/users/bpaillard" class="avatar_sm"> -->
 
           <div class="message_name">
             <h2></h2>
-            <h2>from Paris </h2>
+            <h2><%= journey.user.email %></h2>
           </div>
 
           <div class="dates">
