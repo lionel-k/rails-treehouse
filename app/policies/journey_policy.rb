@@ -7,4 +7,8 @@ class JourneyPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def validate?
+    true
+  end
 end

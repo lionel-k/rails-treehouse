@@ -1,5 +1,3 @@
-console.log("Hello from total_price");
-
 const start = document.getElementById("range_start").value
 const end = document.getElementById("range_end").value
 
