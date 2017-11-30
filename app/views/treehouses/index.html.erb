@@ -22,7 +22,7 @@
       <div class="results-cards">
         <% @treehouses.each do |treehouse| %>
         <div class="col-xs-12 col-sm-4">
-          <%= link_to treehouse_path(treehouse, treehouse_location: params[:treehouses][:location], treehouse_checkin: params[:treehouses][:checkin].first, treehouse_checkout: params[:treehouses][:checkout].first, treehouse_guests_number: params[:treehouses][:guests_number], treehouse_price_per_night: params[:treehouses][:price_per_night]) do %>
+          <%= link_to treehouse_path(treehouse, treehouse_checkin: params[:treehouses][:checkin].first, treehouse_checkout: params[:treehouses][:checkout].first, treehouse_guests_number: params[:treehouses][:guests_number], treehouse_price_per_night: params[:treehouses][:price_per_night]) do %>
           <div class="results-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path treehouse.photo, height: 300, width: 400, crop: :fill if treehouse.photo.present? %>');">
           </div>
           <div class="results-detail">
