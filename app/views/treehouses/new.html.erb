@@ -1,12 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-sm-4">
+    <div class="col-md-8 col-md-offset-2">
 
-      <h2 class="text-center">Create a new treehouse</h2>
-      <%= simple_form_for(@treehouse) do |f| %>
+      <h2 class="text-center">My Offer</h2>
+      <%= simple_form_for @treehouse, :html => { class: 'form-checkox-inline' } do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
-        <%= f.input :location %>
+        <%= f.input :location, id: "treehouse_location" %>
+        <%= f.label :category %>
+        <%= f.input :category,
+            :as => :check_boxes,
+            :collection => ["Lake", "Family", "Romantic", "Woods", "Mountains", "Fields"],
+            label: false
+        %>
         <%= f.input :price_per_night, :label => "Price Per Night (€)" %>
         <%= f.input :capacity, collection: [ 1 ,2 ,3, 4 ], :label => "Capacity (Between 1 and 4)" %>
         <%= f.input :photo %>
