@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   end
   resources :journeys, only: :index
   root to: 'pages#home'
+
+  patch "journeys", to: "journeys#validate"
+
 end
+

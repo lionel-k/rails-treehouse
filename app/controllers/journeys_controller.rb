@@ -16,6 +16,19 @@ class JourneysController < ApplicationController
     end
   end
 
+  def validate
+    @treehouses = Treehouse.where(user: current_user)
+    authorize @treehouses
+    is_confirmed = true
+  end
+
+  def decline
+    @treehouses = Treehouse.where(user: current_user)
+    authorize @treehouses
+    is_confirmed = false
+  end
+
+
   private
 
   def journey_params
