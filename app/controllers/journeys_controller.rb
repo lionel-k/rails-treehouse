@@ -21,7 +21,6 @@ class JourneysController < ApplicationController
     authorize journey
     journey.is_confirmed = params[:status] == "accepted" ? true : false
     journey.save
-    # raise
     redirect_to journeys_path
   end
 

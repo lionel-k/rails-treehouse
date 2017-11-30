@@ -55,12 +55,7 @@
   <div class="row">
     <div role="tabpanel" class="inbox2 tab-pane" id="profile">
       <ul class="inbox">
-        <%# my_hostings = Journey.joins(:treehouse).where("treehouses"."user" = ?", current_user) %>
-        <% my_hostings = [] %>
-        <% owner_treehouses = Treehouse.where(user: current_user) %>
-        <% Journey.all.each do |journey| %>
-        <% my_hostings << journey if journey.treehouse.user == current_user %>
-        <% end %>
+        <% my_hostings = Journey.hostings(current_user) %>
         <% my_hostings.each do |journey| %>
         <li class="message">
 
@@ -71,21 +66,14 @@
             <h2>from Paris </h2>
           </div>
 
-          <div class="contact">
-            <form method="post" action="send_to_guest">
-              <textarea name="send_to_guest" id="send_to_guest"></textarea>
-            </form>
-            <center><%= link_to "Contact Guest", "", class: "btn btn-success" %></center>
-          </div>
-
           <div class="dates">
             <h4>Check-In - Check-Out</h4>
-            <p>17/12/17 - 23/12/17</p>
+            <p><%= journey.checkin %>   -   <%= journey.checkout %></p>
           </div>
 
           <div class="guests">
             <h4>Guests number</h4>
-            <p><center>4</center></p>
+            <p><center><%= journey.guests_number %></center></p>
           </div>
 
           <div class="message_status text_greylight">
@@ -97,7 +85,7 @@
               <% end %>
             </h4>
 
-            <h4 class="price">€430</h4>
+            <h4 class="price"><%= journey.total_price %>€</h4>
           </div>
 
           <div class="message_body">
