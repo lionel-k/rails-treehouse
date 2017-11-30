@@ -1,5 +1,8 @@
 import GMaps from 'gmaps/gmaps.js';
 
+import { autocomplete } from '../components/autocomplete';
+autocomplete();
+
 const styles = [
     {
         "featureType": "landscape.natural",
@@ -97,6 +100,3 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     icon: iconBase + 'http://s3.amazonaws.com/supadu-travel-channel/silo/library/shows/treehouse%20guys.jpg'
   });
 }
-
-import { autocomplete } from '../components/autocomplete';
-autocomplete();
