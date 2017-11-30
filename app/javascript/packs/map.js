@@ -78,23 +78,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
 
   const markers = JSON.parse(mapElement.dataset.markers);
-  console.log(markers);
-
-  const customMarkers = []
-  customMarkers.forEach(function(marker) {
-
-    const myLatLng = new google.maps.LatLng(marker.lat, marker.lng);
-
-    const customMarker = new google.maps.Marker({
-      position: myLatLng,
-      map: mapElement,
-      title: 'Precision Profiles Manufacturing'
-    });
-
-    console.log(customMarker)
-    customMarkers.push(customMarker)
-
-  });
 
   map.addMarkers(markers);
 
@@ -113,12 +96,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
   map.setStyle('map_style');
 
-  // var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-  // var marker = new google.maps.Marker({
-  //   position: myLatLng,
-  //   map: map,
-  //   icon: iconBase + 'http://s3.amazonaws.com/supadu-travel-channel/silo/library/shows/treehouse%20guys.jpg'
-  // });
 
 }
 
