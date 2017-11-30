@@ -158,22 +158,30 @@
 <!-- bid part -->
     <div class="bidding-part col-md-4 text-center">
       <div class="price">
-      <p id="price_per_night"><%= @treehouse.price_per_night%>€ per night</p>
+        <p id="price_per_night"><%= @treehouse.price_per_night%>€ per night</p>
       </div>
-
-
-  <%= simple_form_for @journey, :url => treehouse_journeys_path(@treehouse), :method => :post, html: {class: 'form-inline custom-select2'} do |f| %>
-    <%= f.input :checkin, as: :string, required: false, input_html: { id: "range_start", class: "datepicker text-center", value: Date.parse(params["y"]) }, label: false %>
-    <%= f.input :checkout, as: :string, required: false, input_html: { id: "range_end", class: "datepicker text-center", value: Date.parse(params["z"]) }, label: false %>
-    <%= f.input :guests_number, :collection => [1, 2, 3, 4], label: false, prompt: "Guests", selected: params["a"] %>
-    <%= f.button :submit, "Reservation Request", class: "btn btn-danger" %>
-
+      <%= simple_form_for @journey, :url => treehouse_journeys_path(@treehouse), :method => :post, html: {class: 'form-inline custom-select2'} do |f| %>
+      <div class= "form-show-date-wrapper">
+        <label class="label-show"><span>Start date</span></label>
+        <% start_date = Date.parse(params["y"]) unless params["y"].blank? %>
+        <%= f.input :checkin, as: :string, required: false, input_html: { id: "range_start", class: "form-show-date", class: "datepicker text-center", value: start_date }, label: false, placeholder: "CheckIn" %>
+      </div>
+      <div class= "form-show-date-wrapper">
+        <label class="label-show"><span>End date</span></label>
+        <% end_date = Date.parse(params["z"]) unless params["z"].blank? %>
+        <%= f.input :checkout, as: :string, required: false, input_html: { id: "range_end", class: "form-show-date", class: "datepicker text-center", value: end_date }, label: false, placeholder: "CheckOut" %>
+      </div>
+      <div class= "form-show-date-wrapper">
+        <label class="label-show"><span>number of guests</span></label>
+        <%= f.input :guests_number, :collection => [1, 2, 3, 4], label: false, prompt: "Guests", selected: params["a"] %>
+      </div>
+      <div class= "form-show-button-wrapper">
+      <%= f.button :submit, "Reservation Request", class: "btn form-show-button" %>
+      </div>
       <div id="total_price">
-
       </div>
-
-  <% end %>
-</div>
+      <% end %>
+    </div>
 <!-- fin input bid -->
   </div>
 </div>

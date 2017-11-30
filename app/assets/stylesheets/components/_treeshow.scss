@@ -1,3 +1,46 @@
+.form-show-button {
+  color: white;
+  background-color: #FF5A5F;
+  border-color: #DF5A5F;
+  border-radius: 5px;
+  width: 100%;
+  &-wrapper {
+    padding: 10px;
+  }
+  &:hover {
+    background-color: #FF5A5F;
+    color: #EFF2F7;
+    border-color: #DF5A5F;
+  }
+}
+
+.form-show-date {
+  background-color: white;
+  border-radius: 150px;
+  width: 100%;
+  &-wrapper {
+    padding: 10px;
+    background-color: white;
+  }
+}
+.form-control {
+  background-color: white !important;
+}
+
+.label-show {
+  font-weight: normal;
+  margin: 0px;
+  word-wrap: break-word ;
+  font-family: Circular,Roboto,Helvetica Neue,sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+}
+
+
 .bidding-part{
     padding-left: 24px;
     padding-right: 24px;
@@ -5,6 +48,7 @@
     border: 1px solid #e4e4e4;
     background-color: #ffffff;
     margin-left: 30px;
+    border-radius: 5px;
 }
 
 .price {
