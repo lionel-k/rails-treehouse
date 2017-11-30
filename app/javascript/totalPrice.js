@@ -1,4 +1,3 @@
-console.log("Hello from total_price");
 const checkin = document.getElementById("range_start");
 const checkout = document.getElementById("range_end");
 const computePrice = () => {
@@ -24,6 +23,5 @@ const computePrice = () => {
 [checkin, checkout].forEach((input) => {
   input.addEventListener(("change"), computePrice);
 })
-console.log("from total_price");
 
 

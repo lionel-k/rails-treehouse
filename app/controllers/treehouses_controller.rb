@@ -14,10 +14,11 @@ class TreehousesController < ApplicationController
     end
     treehouses_flags = @treehouses.where.not(latitude: nil, longitude: nil)
     @markers = treehouses_flags.map do |treehouse|
+      @treehouse_for_view = treehouse
       {
         lat: treehouse.latitude,
-        lng: treehouse.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        lng: treehouse.longitude,
+        infoWindow: { content: render_to_string(partial: "/treehouses/map_box", locals: { treehouse: @treehouse_for_view }) }
       }
     end
   end
