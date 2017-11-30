@@ -1,5 +1,6 @@
 require 'faker'
 
+Journey.destroy_all
 Treehouse.destroy_all
 User.destroy_all
 
@@ -12,7 +13,14 @@ amael = User.create(email: 'amael@mail.com', password: "123456")
 
 [lionel, amelie, anthony, amael].each { |member| users << member }
 
-locations = ["Paris", "Bordeaux", "Lyon", "Charenton", "Annecy", "Marseille", "Lille"]
+categories = ["lake", "family", "romantic", "woods", "mountains", "fields"]
+locations = ["rue du petit Barail 33300 Bordeaux",
+              "59 rue roger Salengro 59000 Lille" ,
+              "96 avenue de la soude 13009 Marseille",
+              "12 rue de l ancien stade 10000 Troyes",
+              "6 chemin de colmyr 74000 Annecy",
+              "16 villa gaudelet 75011 Paris"
+            ]
 
 treehouses = [
   {
@@ -100,6 +108,7 @@ treehouses.each do |treehouse|
     location: locations.sample,
     price_per_night: (40..200).to_a.sample,
     capacity: [2, 4].sample,
+    category: categories.sample(3).join(" "),
     user: lionel)
   t.remote_photo_url = treehouse[:image]
   t.save
