@@ -1,5 +1,6 @@
 const checkin = document.getElementById("range_start");
 const checkout = document.getElementById("range_end");
+
 const computePrice = () => {
   const start = document.getElementById("range_start").value;
   const start_date = new Date(start.split('-')[0], start.split('-')[1], start.split('-')[2]);
@@ -15,9 +16,9 @@ const computePrice = () => {
     document.getElementById("total_price").innerHTML = '<p><strong> Total: ' + total_price + '€ </strong></p>';
   }
 }
+
 computePrice();
+
 [checkin, checkout].forEach((input) => {
   input.addEventListener(("change"), computePrice);
 })
-
-
