@@ -16,11 +16,18 @@ class JourneysController < ApplicationController
     end
   end
 
+  def validate
+    journey = Journey.find(params[:id])
+    authorize journey
+    journey.is_confirmed = params[:status] == "accepted" ? true : false
+    journey.save
+    redirect_to journeys_path
+  end
+
   private
 
   def journey_params
     params.require(:journey).permit(:checkin, :checkout, :guests_number, :is_confirmed, :treehouse_id)
   end
-
 end
 

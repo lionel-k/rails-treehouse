@@ -8,17 +8,11 @@ const computePrice = () => {
   const end = document.getElementById("range_end").value;
   console.log(end);
   const end_date = new Date(end.split('-')[0], end.split('-')[1], end.split('-')[2]);
-
-
   const diffDays = parseInt((end_date - start_date) / (1000 * 60 * 60 * 24));
-
   console.log(diffDays);
-
   const price = parseInt(document.getElementById("price_per_night").innerText.split("€")[0]);
   const total_price = price * diffDays;
-
   console.log(total_price);
-
   if (isNaN(total_price)){
     console.log("") ;
   }
