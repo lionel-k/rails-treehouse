@@ -1,0 +1,6 @@
+<h4><strong><%= treehouse.title %></strong></h4>
+<p><span class="light-words">from </span><%= treehouse.price_per_night %>€/night</p>
+
+<div class="results-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @treehouse_for_view.photo, height: 150, width: 200, crop: :fill if @treehouse_for_view.photo.present? %>');">
+</div>
+

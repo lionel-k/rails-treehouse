@@ -1,16 +1,23 @@
 .inbox {
+  display: inline-block;
+  justify-content: space-between;
   padding-left: 0px;
   list-style: none;
-  border: 1px solid #dce0e0;
   font-size: 14px;
-  margin: 0;
+  margin: 20px;
+  width: 100%;
 }
+
+.invisible {
+  display: none;
+}
+
 .message {
   /* Your turn to design a flexbox message */
   display: flex;
   align-items: center;
   padding: 20px;
-  border-bottom: 1px solid rgba(220,224,244,0.4);
+  // border: 1px solid rgb(220,224,244);
   justify-content: space-between;
 }
 
@@ -24,8 +31,9 @@
 }
 
 .dates {
-  // flex-grow: 1;
-  padding-left: 20px;
+  flex-grow: 1;
+  padding-left: 10px;
+  margin: 40px;
 }
 
 h4{
@@ -34,10 +42,13 @@ h4{
 
 .guests {
   padding-left: 20px;
+  margin: 30px;
 }
 
 .message_body {
+  justify-content: center;
   padding-left: 20px;
+  min-width: 150px;
 }
 .message_body p {
   color: rgba(0,0,0,0.4);
@@ -46,6 +57,7 @@ h4{
 .message_status {
   padding-left: 20px;
   min-width: 100px;
+  margin: 20px;
 }
 
 .text_greylight {
