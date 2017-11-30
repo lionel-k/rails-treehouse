@@ -172,7 +172,7 @@
         <%= f.input :checkout, as: :string, required: false, input_html: { id: "range_end", class: "form-show-date", class: "datepicker text-center", value: end_date }, label: false, placeholder: "CheckOut" %>
       </div>
       <div class= "form-show-date-wrapper">
-        <label class="label-show"><span>number of guests</span></label>
+        <label class="label-show"><span>Guests</span></label>
         <%= f.input :guests_number, :collection => [1, 2, 3, 4], label: false, prompt: "Guests", selected: params["a"] %>
       </div>
       <div class= "form-show-button-wrapper">
