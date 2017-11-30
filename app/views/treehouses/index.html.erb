@@ -10,9 +10,9 @@
         <h5 class="filters-names">Stay in</h5>
         <h5 class="filters-values"><%= params[:treehouses][:location] %></h5>
         <h5 class="filters-names"> from</h5>
-        <h5 class="filters-values"><%= params[:treehouses][:checkin] %></h5>
+        <h5 class="filters-values"><%= params[:treehouses][:checkin].first %></h5>
         <h5 class="filters-names"> to</h5>
-        <h5 class="filters-values"><%= params[:treehouses][:checkout] %></h5>
+        <h5 class="filters-values"><%= params[:treehouses][:checkout].first %></h5>
         <h5 class="filters-names"> for</h5>
         <h5 class="filters-values"><%= params[:treehouses][:guests_number] %></h5>
         <h5 class="filters-names">guests</h5>
@@ -22,7 +22,7 @@
       <div class="results-cards">
         <% @treehouses.each do |treehouse| %>
         <div class="col-xs-12 col-sm-4">
-          <%= link_to treehouse_path(treehouse, x: params[:treehouses][:location], y: params[:treehouses][:checkin], z: params[:treehouses][:checkout], a: params[:treehouses][:guests_number], b: params[:treehouses][:price_per_night]) do %>
+          <%= link_to treehouse_path(treehouse, treehouse_location: params[:treehouses][:location], treehouse_checkin: params[:treehouses][:checkin].first, treehouse_checkout: params[:treehouses][:checkout].first, treehouse_guests_number: params[:treehouses][:guests_number], treehouse_price_per_night: params[:treehouses][:price_per_night]) do %>
           <div class="results-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path treehouse.photo, height: 300, width: 400, crop: :fill if treehouse.photo.present? %>');">
           </div>
           <div class="results-detail">
