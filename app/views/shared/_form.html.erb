@@ -6,7 +6,7 @@
 
   <%= date_field 'treehouses[checkout]', nil, class: "form-control datepicker text-center", placeholder: "Checkout" %>
 
-  <%= select_tag 'treehouses[guests_number]', options_for_select([['1'], ['2'], ['3'], ['4']]), class: "form-control text-center", prompt: "Guests", value: 0 %>
+  <%= select_tag 'treehouses[guests_number]', options_for_select([['1'], ['2'], ['3'], ['4']]), class: "form-control text-center", prompt: "Guests"%>
 
   <%= submit_tag "Search", class: "btn btn-large btn-primary" %>
 <% end %>
