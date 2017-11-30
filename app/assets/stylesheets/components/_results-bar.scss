@@ -8,6 +8,7 @@
 
 .results-container {
   flex: 1 1 auto;
+  padding: 10px;
 }
 
 .results-container h3 {
@@ -20,6 +21,7 @@
   color: rgba(160, 160, 160, 0.8);
   letter-spacing: 5px;
   text-shadow: 1px 2px rgba(255, 255, 255, 1);
+  padding: 10px 20px 0 20px;
 }
 
 #map {
@@ -30,7 +32,7 @@
 }
 
 .results-filter {
-  padding: 10px;
+  padding: 20px;
 }
 
 .label-form-name {
@@ -65,7 +67,6 @@
   margin-right: 20px !important;
 }
 
-
 .refresh-btn {
   font-size: 15px;
 }
@@ -76,4 +77,8 @@
 
 #guest.unselected  {
   color: rgba(120, 120, 120, 0.8) !important;
+}
+
+.form-control:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 15px rgba(255, 255, 255, 1);
 }

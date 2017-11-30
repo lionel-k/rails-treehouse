@@ -1,6 +1,6 @@
 <%= form_tag treehouses_path, method: :get, class: 'form-inline' do %>
 
-  <%= text_field_tag 'treehouses[location]', nil, class: "form-control text-center", id: 'treehouse_location', placeholder: "Choose destination" %>
+  <%= text_field_tag 'treehouses[location]', nil, class: "form-control text-center", id: 'treehouse_location', placeholder: "Choose destination", autofocus: true %>
 
   <%= date_field 'treehouses[checkin]', nil, class: "form-control datepicker text-center date-input", placeholder: "Checkin" %>
 
