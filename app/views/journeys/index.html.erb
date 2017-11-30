@@ -1,14 +1,13 @@
 <div class="container">
+  <h1>Your Dashboard</h1>
 
-      <h1>Your Dashboard</h1>
+  <div class="tabs">
+    <a href="#" class="tab active">I'm Traveling</a>
+    <a href="#" class="tab">I'm Hosting</a>
+  </div>
 
-      <!-- Code your tabs here -->
-
-      <div class="tabs">
-        <a href="#" class="tab active">I'm Traveling</a>
-        <a href="#" class="tab">I'm Hosting</a>
-      </div>
-
+  <div class="row">
+    <div class="inbox1">
       <ul class="inbox">
         <% @journeys.each do |journey| %>
         <li class="message">
@@ -42,8 +41,40 @@
         </li>
         <% end %>
       </ul>
-
     </div>
+  </div>
+
+  <div class="row">
+    <div class="inbox2">
+      <ul class="inbox">
+        <li class="message">
+          <img src="https://kitt.lewagon.com/placeholder/users/bpaillard" class="avatar_sm">
+          <div class="message_name">
+            <h2>Neo</h2>
+            <h2>from Paris </h2>
+          </div>
+          <a href="", class="btn green btn-success">Contact Guest</a>
+          <div class="dates">
+            <h4>Check-In - Check-Out</h4>
+            <p>17/12/17 - 23/12/17</p>
+          </div>
+          <div class="guests">
+            <h4>Guests number</h4>
+            <p><center>4</center></p>
+          </div>
+          <div class="message_status text_greylight">
+            <h4 class="status text_greylight">Pending</h4>
+            <h4 class="price">€430</h4>
+          </div>
+          <div class="message_body">
+            <a href="", class="btn green btn-success">Accept</a><p></p><a href="", class="btn btn-danger">Decline</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
 
 
     <!--  class css visible -->
