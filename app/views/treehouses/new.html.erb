@@ -3,10 +3,14 @@
     <div class="col-sm-12 col-sm-4">
 
       <h2 class="text-center">Create a new treehouse</h2>
-      <%= simple_form_for(@treehouse) do |f| %>
+      <%= simple_form_for @treehouse, :html => { class: 'form-checkox-inline' } do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :location %>
+        <%= f.input :category,
+            :as => :check_boxes,
+            :collection => ["lake", "family", "romantic", "woods", "mountains", "fields"]
+        %>
         <%= f.input :price_per_night, :label => "Price Per Night (€)" %>
         <%= f.input :capacity, collection: [ 1 ,2 ,3, 4 ], :label => "Capacity (Between 1 and 4)" %>
         <%= f.input :photo %>

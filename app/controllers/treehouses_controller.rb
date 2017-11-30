@@ -26,6 +26,7 @@ class TreehousesController < ApplicationController
   end
 
   def create
+    raise
     @treehouse = Treehouse.new(treehouse_params)
     @treehouse.user = current_user
     authorize @treehouse
