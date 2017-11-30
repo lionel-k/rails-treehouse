@@ -8,10 +8,11 @@ class TreehousesController < ApplicationController
     if params[:treehouses][:location].blank?
       @treehouses = Treehouse.all
     else
-      guests_number =  params[:guests_number].blank? ? 0 : params[:guests_number]
-      @treehouses = Treehouse.where("location = ? AND capacity >= ?", params[:treehouses][:location], guests_number)
+      guests_number =  params[:treehouses][:guests_number].blank? ? 0 : params[:treehouses][:guests_number]
+      @treehouses = Treehouse.where("capacity >= ?", guests_number)
+      @treehouses = @treehouses.near(params[:treehouses][:location], 100)
     end
-    treehouses_flags = Treehouse.where.not(latitude: nil, longitude: nil)
+    treehouses_flags = @treehouses.where.not(latitude: nil, longitude: nil)
     @markers = treehouses_flags.map do |treehouse|
       {
         lat: treehouse.latitude,

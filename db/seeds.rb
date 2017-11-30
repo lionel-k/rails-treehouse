@@ -16,10 +16,23 @@ amael = User.create(email: 'amael@mail.com', password: "123456")
 categories = ["lake", "family", "romantic", "woods", "mountains", "fields"]
 locations = ["rue du petit Barail 33300 Bordeaux",
               "59 rue roger Salengro 59000 Lille" ,
+              "267 Bis Rue Roger Salengro, 59260 Hellemmes-Lille",
+              "Marché Couvert de Wazemmes, Place de la Nouvelle Aventure, 59000 Lille",
+              "48 Rue de Marquillies, 59000 Lille",
               "96 avenue de la soude 13009 Marseille",
+              "35 Rue Désiré Pelaprat, 13008 Marseille",
+              "9 Rue François Rocca, 13008 Marseille",
+              "18 Boulevard de la Liberté, 13001 Marseille",
               "12 rue de l ancien stade 10000 Troyes",
+              "Rue des Vassaules, 10012 Troyes",
+              "2 Boulevard Henri BarbusseLes Acacias, 10000 Troyes",
               "6 chemin de colmyr 74000 Annecy",
-              "16 villa gaudelet 75011 Paris"
+              "Le Port, Promenade Philippe Orlye, 74290 Menthon-Saint-Bernard",
+              "120 Route de la Plage, 74210 Doussard",
+              "27 Route de Thônes, 74940 Annecy-le-Vieux",
+              "79 Route des Usses, 74570 Groisy",
+              "16 villa gaudelet 75011 Paris",
+              "16 Avenue de la Motte-Picquet, 75007 Paris"
             ]
 
 treehouses = [
@@ -97,15 +110,17 @@ treehouses = [
     image: "http://blog.infotourisme.net/wp-content/uploads/2012/06/Dining-Pod.jpg",
     description: "This small house looks fairly modern and is in poor condition.  The interior is done in colors that remind you of a gingerbread house.  The yard is large and is neatly-trimmed.  Also, it's the site of an infamous murder.",
     title: "Château de Blois"
-  },
+  }
 ]
 
 
 treehouses.each do |treehouse|
+  location = locations.sample
+  locations.delete(location)
   t = Treehouse.new(
     title: treehouse[:title],
     description: treehouse[:description],
-    location: locations.sample,
+    location: location,
     price_per_night: (40..200).to_a.sample,
     capacity: [2, 4].sample,
     category: categories.sample(3).join(" "),
