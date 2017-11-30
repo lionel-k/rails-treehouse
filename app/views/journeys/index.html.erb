@@ -1,48 +1,53 @@
 <div class="container">
-
   <h1>Your Dashboard</h1>
 
-  <!-- Code your tabs here -->
-
-  <div class="tabs">
-    <a href="#" class="tab active">I'm Traveling</a>
-    <a href="#" class="tab">I'm Hosting</a>
+  <div class="tabs nav nav-tabs" role="tablist">
+    <li role="presentation" class="tab active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">I'm Traveling</a></li>
+<!--     <a href="#" class="tab active">I'm Traveling</a> -->
+    <!-- <a href="#" class="tab">I'm Hosting</a> -->
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">>I'm Hosting</a></li>
   </div>
 
-  <ul class="inbox">
-    <% @journeys.each do |journey| %>
-    <li class="message">
-      <!-- Code your message here -->
-      <img src="https://kitt.lewagon.com/placeholder/users/lionel-k" class="avatar_sm">
-      <div class="message_name">
-        <h2><strong><%= journey.treehouse.user.email.split("@")[0].capitalize %></strong></h2>
-        <h2><%= journey.treehouse.location %></h2>
-      </div>
-      <div class="dates">
-        <h4>Check-In - Check-Out</h4>
-        <p><%= journey.checkin %>   -   <%= journey.checkout %></p>
-      </div>
-      <div class="guests">
-        <h4>Guests number</h4>
-        <p><center><%= journey.guests_number %></center></p>
-      </div>
-      <div class="message_status text_greylight">
-        <h4 class="status text_greylight">
-          <% if journey.is_confirmed %>
-          <div class="accepted"><%= "Accepted" %></div>
-          <% else %>
-          <div class="declined"><%= "Pending" %></div>
-          <% end %>
-        </h4>
-        <h4 class="price"><%= journey.total_price %>€</h4>
-      </div>
-      <div class="message_body">
-        <%= link_to "Contact Host", "", class: "btn btn-success" %>
-      </div>
-    </li>
-    <% end %>
-  </ul>
-
+  <div class="row tab-content">
+    <div role="tabpanel" class="inbox1 tab-pane active" id="home">
+      <ul class="inbox">
+        <% @journeys.each do |journey| %>
+        <li class="message">
+          <!-- Code your message here -->
+          <img src="https://kitt.lewagon.com/placeholder/users/lionel-k" class="avatar_sm">
+          <div class="message_name">
+            <h2><strong><%= journey.treehouse.user.email.split("@")[0].capitalize %></strong></h2>
+            <h2><%= journey.treehouse.location %></h2>
+          </div>
+          <div class="dates">
+            <h4>Check-In - Check-Out</h4>
+            <p><%= journey.checkin %>   -   <%= journey.checkout %></p>
+          </div>
+          <div class="guests">
+            <h4>Guests number</h4>
+            <p><center><%= journey.guests_number %></center></p>
+          </div>
+          <div class="message_status text_greylight">
+            <h4 class="status text_greylight">
+              <% if journey.is_confirmed %>
+                <div class="accepted"><%= "Accepted" %></div>
+                <% else %>
+                <div class="declined"><%= "Pending" %></div>
+                <% end %>
+              </h4>
+            <h4 class="price"><%= journey.total_price %>€</h4>
+          </div>
+          <div class="message_body">
+          <form method="post" action="send_to_host">
+          <center><textarea name="send_to_host" id="send_to_host"></textarea></center>
+          </form>
+          <center><%= link_to "Contact Host", "", class: "btn btn-success" %></center>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
   <p></p>
   <p>Hosting</p>
@@ -50,50 +55,58 @@
   <div class="row">
     <div role="tabpanel" class="inbox2 tab-pane" id="profile">
       <ul class="inbox">
+        <%= current_user.email %>
+        <% @journeys.each do |journey| %>
         <li class="message">
+
           <img src="https://kitt.lewagon.com/placeholder/users/bpaillard" class="avatar_sm">
+
           <div class="message_name">
             <h2></h2>
             <h2>from Paris </h2>
           </div>
+
           <div class="contact">
             <form method="post" action="send_to_guest">
               <textarea name="send_to_guest" id="send_to_guest"></textarea>
             </form>
             <center><%= link_to "Contact Guest", "", class: "btn btn-success" %></center>
           </div>
+
           <div class="dates">
             <h4>Check-In - Check-Out</h4>
             <p>17/12/17 - 23/12/17</p>
           </div>
+
           <div class="guests">
             <h4>Guests number</h4>
             <p><center>4</center></p>
           </div>
+
           <div class="message_status text_greylight">
             <h4 class="status text_greylight">Pending</h4>
             <h4 class="price">€430</h4>
           </div>
+
           <div class="message_body">
-            <%= link_to "Accept", journeys_path(), method: :patch, class: "btn green btn-success" %>
+            <%= link_to "Accept", validate_journey_path(journey, status: 'accepted'), class: "btn green btn-success" %>
             <p></p>
-            <%= link_to "Decline", journeys_path(), method: :patch, class: "btn green btn-danger" %>
+            <%= link_to "Decline", validate_journey_path(journey, status: 'declined'), class: "btn green btn-danger" %>
           </div>
+
         </li>
+        <% end %>
       </ul>
     </div>
   </div>
+
 </div>
 
 
-
-
-<!--  class css visible -->
-<!-- donner id à tous les elements -->
-<!-- mettre en variable chaque tab(titre) -->
-<!-- ajouter eventlistener sur chaque tab qui exrec fction -->
-<!-- definir fonction -->
-<!-- enleve la visi à tous et rajoute a celle qui nous interesse -->
-
-
+    <!--  class css visible -->
+    <!-- donner id à tous les elements -->
+    <!-- mettre en variable chaque tab(titre) -->
+    <!-- ajouter eventlistener sur chaque tab qui exrec fction -->
+    <!-- definir fonction -->
+    <!-- enleve la visi à tous et rajoute a celle qui nous interesse -->
 

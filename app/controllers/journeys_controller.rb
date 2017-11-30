@@ -16,6 +16,10 @@ class JourneysController < ApplicationController
     end
   end
 
+  def validate
+    raise
+  end
+
   private
 
   def journey_params
