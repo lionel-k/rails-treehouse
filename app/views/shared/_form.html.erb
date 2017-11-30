@@ -1,8 +1,12 @@
-<%= simple_form_for :treehouses, :url => "/treehouses", method: "get", html: {class: 'form-inline custom-select2'} do |f| %>
-  <% all_locations = Treehouse.select(:location).map(&:location).uniq %>
-  <%= f.input :location, :collection => all_locations, prompt: "Choose a destination", input_html: { class: 'select2 form-control' }, label: false %>
-  <%= f.input :checkin, as: :string, required: false, input_html: { id: "range_start", class: "datepicker text-center" }, label: false, placeholder: "CheckIn" %>
-  <%= f.input :checkout, as: :string, required: false, input_html: { id: "range_end", class: "datepicker text-center" }, label: false, placeholder: "CheckOut" %>
-  <%= f.input :guests_number, :collection => [1, 2, 3, 4], label: false, prompt: "Guests" %>
-  <%= f.button :submit, "Search", class: "btn btn-primary" %>
+<%= form_tag treehouses_path, method: :get, class: 'form-inline' do %>
+
+  <%= text_field_tag 'treehouses[location]', nil, class: "form-control", id: 'treehouse_location', placeholder: "Choose a destination" %>
+
+  <%= date_field 'treehouses[checkin]', nil, class: "form-control datepicker text-center", placeholder: "Checkin" %>
+
+  <%= date_field 'treehouses[checkout]', nil, class: "form-control datepicker text-center", placeholder: "Checkout" %>
+
+  <%= select_tag 'treehouses[guests_number]', options_for_select([['1'], ['2'], ['3'], ['4']]), class: "form-control text-center", prompt: "Guests", value: 0 %>
+
+  <%= submit_tag "Search", class: "btn btn-large btn-primary" %>
 <% end %>
