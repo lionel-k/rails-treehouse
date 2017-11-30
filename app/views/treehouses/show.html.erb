@@ -1,7 +1,7 @@
 
 <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @treehouse.photo if @treehouse.photo.present? %>');">
-  <div class="card-show-category">New</div>
-  <div class="card-show-description">
+  <div class="card-show-category"></div>
+  <div class="card-show-description text-center">
     <h1><%= @treehouse.title %></h&>
   </div>
 </div>
@@ -175,6 +175,7 @@
         <label class="label-show"><span>Guests</span></label>
         <%= f.input :guests_number, :collection => [1, 2, 3, 4], label: false, prompt: "Guests", selected: params["treehouse_guests_number"] %>
       </div>
+      <br>
       <div id="total_price">
       </div>
       <div class= "form-show-button-wrapper">
