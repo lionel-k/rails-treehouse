@@ -5,8 +5,8 @@
     <div class="results-container text-center">
 
       <h3>Our selection of treehouses</h3>
-      <p>The time to relax is when you don't have time for it</p>
       <%= render "shared/form_index" %>
+      <p class="text-left"><%= @treehouses.length < 2 ? "#{ @treehouses.length } result" : "#{ @treehouses.length } results" %></p>
 
       <div class="results-cards">
         <% @treehouses.each do |treehouse| %>
