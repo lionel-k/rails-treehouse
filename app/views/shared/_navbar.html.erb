@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "logo.png", id:"clickme", data: {sound_url: asset_path('sound.mp3')} %>
   <% end %>
 
   <!-- Right Navigation -->
