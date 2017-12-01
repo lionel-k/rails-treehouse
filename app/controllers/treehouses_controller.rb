@@ -49,6 +49,13 @@ class TreehousesController < ApplicationController
   def show
     @treehouse = Treehouse.find(params[:id])
     @journey = Journey.new
+    @markers = [
+      {
+        lat: @treehouse.latitude,
+        lng: @treehouse.longitude,
+        icon: "https://res.cloudinary.com/dqwxvdtnv/image/upload/v1512067586/yus79fy3kdontkwneo1y.png",
+      }
+    ]
   end
 
   private
