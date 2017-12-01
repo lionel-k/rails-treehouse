@@ -43,13 +43,12 @@
 
 
 .bidding-part{
-    padding-left: 24px;
-    padding-right: 24px;
-    margin: 0px;
-    border: 1px solid #e4e4e4;
-    background-color: #ffffff;
-    margin-left: 30px;
-    border-radius: 5px;
+  margin: 0px;
+  border: 1px solid #e4e4e4;
+  background-color: #ffffff;
+  margin-left: 30px;
+  border-radius: 5px;
+  padding: 24px 50px;
 }
 
 .price {
@@ -157,4 +156,21 @@
 
 .message_status {
   min-width: 100px;
+}
+
+
+.main-container {
+  display: flex;
+}
+
+.journey-request {
+  flex: 0 0 500px;
+  margin: 50px;
+}
+
+.treehouse-details {
+  flex: 1 1 auto;
+  margin: 50px 50px 50px 120px;
+  // background-color: red;
+  // height: 100px;
 }
