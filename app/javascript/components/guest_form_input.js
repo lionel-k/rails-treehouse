@@ -1,5 +1,6 @@
 const guest = document.getElementById('guest');
-
-guest.addEventListener("change", () => {
-  guest.classList.remove('unselected');
-});
+if (guest) {
+  guest.addEventListener("change", () => {
+    guest.classList.remove('unselected');
+  });
+}

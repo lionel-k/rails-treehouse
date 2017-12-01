@@ -1,11 +1,14 @@
 import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
-  new Typed('#banner-typed-text', {
-    strings: ["Find the best treehouse for a very low price"],
-    typeSpeed: 100,
-    loop: true
-  });
+  const bannerText = document.getElementById('banner-typed-text');
+  if (bannerText) {
+    new Typed('#banner-typed-text', {
+      strings: ["Find a place to chill", "Be closer to nature"],
+      typeSpeed: 80,
+      loop: true
+    });
+  }
 }
 
 export { loadDynamicBannerText };
