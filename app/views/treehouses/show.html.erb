@@ -6,8 +6,22 @@
 <div class="main-container">
   <div class="treehouse-details">
     <h3>Categories</h3>
-    <p><%= @treehouse.category.split.map(&:capitalize).join(' - ') %></p>
+
+    <div class="categories-container">
+
+      <% @treehouse.category.split.each do |category| %>
+
+      <div class="category-item tag <%= category %>">
+        <% image_link = "#{category}-icon.png" %>
+        <%= image_tag image_link, class: "img-icon" %>
+        <h5><%= category.capitalize %></h5>
+      </div>
+      <% end %>
+
+    </div>
+
     <hr>
+
     <h3>Description</h3>
     <%= @treehouse.description %>
   </div>
@@ -49,4 +63,4 @@
   </div>
 </div>
 
-  <div id="map" data-markers="<%= @markers.to_json %>"></div>
+<div id="map" data-markers="<%= @markers.to_json %>"></div>
