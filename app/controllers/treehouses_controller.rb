@@ -2,15 +2,20 @@ class TreehousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_policy_scoped, only: :index
   skip_after_action :verify_authorized, only: :show
-  before_action :treehouses_params, only: [:index]
 
   def index
-    if params[:treehouses][:location].blank?
-      @treehouses = Treehouse.all
+    if params[:treehouses]
+      @search_params = {treehouse_checkin: params[:treehouses][:checkin].first, treehouse_checkout: params[:treehouses][:checkout].first, treehouse_guests_number: params[:treehouses][:guests_number], treehouse_price_per_night: params[:treehouses][:price_per_night]}
+      if params[:treehouses][:location].blank?
+        @treehouses = Treehouse.all
+      else
+        guests_number =  params[:treehouses][:guests_number].blank? ? 0 : params[:treehouses][:guests_number]
+        @treehouses = Treehouse.where("capacity >= ?", guests_number)
+        @treehouses = @treehouses.near(params[:treehouses][:location], 100)
+      end
     else
-      guests_number =  params[:treehouses][:guests_number].blank? ? 0 : params[:treehouses][:guests_number]
-      @treehouses = Treehouse.where("capacity >= ?", guests_number)
-      @treehouses = @treehouses.near(params[:treehouses][:location], 100)
+      @treehouses = Treehouse.all
+      @search_params = {}
     end
     treehouses_flags = @treehouses.where.not(latitude: nil, longitude: nil)
 
@@ -54,9 +59,6 @@ class TreehousesController < ApplicationController
   end
 
   private
-  def treehouses_params
-    params.require(:treehouses).permit(:capacity, :location, :checkin, :checkout)
-  end
 
   def treehouse_params
     params.require(:treehouse).permit(:title, :capacity, :description, :location, :price_per_night, :photo)
