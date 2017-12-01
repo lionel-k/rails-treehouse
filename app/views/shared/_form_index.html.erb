@@ -1,7 +1,7 @@
 <%= form_tag treehouses_path, method: :get, class: 'form-inline results-filter' do %>
 
   <% location = params[:treehouses][:location] %>
-  <%= label_tag 'treehouses[location]', 'Stay in', class: "label-form-name" %>
+  <%= label_tag 'treehouses[location]', 'Stay in', class: "label-form-name first-name" %>
   <%= text_field_tag 'treehouses[location]', nil, class: "form-control label-form-input large text-center", id: 'treehouse_location', placeholder: "Destination", value: location %>
 
   <% checkin = params[:treehouses][:checkin] %>
