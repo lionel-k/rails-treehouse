@@ -1,15 +1,13 @@
 <div class="container">
-  <h1>Your Dashboard</h1>
+  <h1><%= @current_user.email.split("@")[0].capitalize %>'s Dashboard</h1>
 
-  <div class="tabs nav nav-tabs" role="tablist">
-    <li role="presentation" class="tab active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">I'm Traveling</a></li>
-    <!--     <a href="#" class="tab active">I'm Traveling</a> -->
-    <!-- <a href="#" class="tab">I'm Hosting</a> -->
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">>I'm Hosting</a></li>
+  <div class="tabs">
+    <a href="#" class="guest tab tab-guest active">I'm Traveling</a>
+    <a href="#" class="host tab tab-host">I'm Hosting</a>
   </div>
 
-  <div class="row tab-content">
-    <div role="tabpanel" class="inbox1 tab-pane active" id="home">
+  <div class="row">
+    <div class="inbox-guest" id="guest">
       <ul class="inbox">
         <% @journeys.each do |journey| %>
         <li class="message">
@@ -37,23 +35,14 @@
             </h4>
             <h4 class="price"><%= journey.total_price %>€</h4>
           </div>
-          <div class="message_body">
-            <form method="post" action="send_to_host">
-              <center><textarea name="send_to_host" id="send_to_host"></textarea></center>
-            </form>
-            <center><%= link_to "Contact Host", "", class: "btn btn-success" %></center>
-          </div>
         </li>
         <% end %>
       </ul>
     </div>
   </div>
 
-  <p></p>
-  <p>Hosting</p>
-
   <div class="row">
-    <div role="tabpanel" class="inbox2 tab-pane" id="profile">
+    <div class="inbox-host" id="host">
       <ul class="inbox">
         <% my_hostings = Journey.hostings(current_user) %>
         <% my_hostings.each do |journey| %>
@@ -87,7 +76,7 @@
           </div>
 
           <div class="message_body">
-            <%= link_to "Accept", validate_journey_path(journey, status: 'accepted'), class: "btn green btn-success" %>
+            <%= link_to "Accept!", validate_journey_path(journey, status: 'accepted'), class: "btn green btn-success" %>
             <p></p>
             <%= link_to "Decline", validate_journey_path(journey, status: 'declined'), class: "btn green btn-danger" %>
           </div>
@@ -99,12 +88,3 @@
   </div>
 
 </div>
-
-
-<!--  class css visible -->
-<!-- donner id à tous les elements -->
-<!-- mettre en variable chaque tab(titre) -->
-<!-- ajouter eventlistener sur chaque tab qui exrec fction -->
-<!-- definir fonction -->
-<!-- enleve la visi à tous et rajoute a celle qui nous interesse -->
-

@@ -1,0 +1,20 @@
+<%= form_tag treehouses_path, method: :get, class: 'form-inline results-filter' do %>
+
+  <% location = params[:treehouses][:location] %>
+  <%= label_tag 'treehouses[location]', 'Stay in', class: "label-form-name" %>
+  <%= text_field_tag 'treehouses[location]', nil, class: "form-control label-form-input large text-center", id: 'treehouse_location', placeholder: "Destination", value: location %>
+
+  <% checkin = params[:treehouses][:checkin] %>
+  <%= label_tag 'treehouses[checkin]', 'from', class: "label-form-name" %>
+  <%= date_field 'treehouses[checkin]', nil, class: "form-control datepicker text-center label-form-input medium", placeholder: "Checkin", value: checkin %>
+
+  <% checkout = params[:treehouses][:checkout] %>
+  <%= label_tag 'treehouses[checkout]', 'to', class: "label-form-name" %>
+  <%= date_field 'treehouses[checkout]', nil, class: "form-control datepicker text-center label-form-input medium", placeholder: "Checkout", value: checkout %>
+
+  <% guests_number = params[:treehouses][:guests_number] %>
+  <%= label_tag 'treehouses[guests_number]', 'for', class: "label-form-name" %>
+  <%= select_tag 'treehouses[guests_number]', options_for_select([['1'], ['2'], ['3'], ['4']], guests_number), class: "form-control text-center label-form-input small unselected", prompt: "Guests" %>
+
+  <%= submit_tag "Refresh", class: "btn refresh-btn" %>
+<% end %>

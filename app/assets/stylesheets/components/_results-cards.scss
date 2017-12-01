@@ -1,5 +1,5 @@
 .results-cards {
-  padding: 10px 5px;
+  padding: 2px 5px 10px 5px;
 }
 
 .results-picture {
@@ -17,6 +17,7 @@
   border-radius: 1px;
   margin: 0px 5px 20px 5px;
   border: 1px solid rgba(230,230,230,0.9);
+  background-color: rgba(250, 250, 250, 0.9);
 }
 
 .results-detail > h4 {
@@ -39,6 +40,6 @@
 
 .light-words {
   font-weight: lighter;
-  color: rgba(150, 150, 150, 0.8);
+  color: rgba(100, 100, 100, 0.8);
 }
 
