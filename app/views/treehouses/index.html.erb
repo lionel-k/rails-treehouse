@@ -7,6 +7,32 @@
       <h3>Our selection of treehouses</h3>
       <div class="filters-bar text-center">
         <%= render "shared/form_index" %>
+        <div class="categories-container">
+          <div class="category-item tag lake">
+            <%= image_tag "lake-icon.png", class: "img-icon" %>
+            <h5>Lake</h5>
+          </div>
+          <div class="category-item tag family">
+            <%= image_tag "family-icon.png", class: "img-icon" %>
+            <h5>Family</h5>
+          </div>
+          <div class="category-item tag romantic">
+            <%= image_tag "romantic-icon.png", class: "img-icon" %>
+            <h5>Romantic</h5>
+          </div>
+          <div class="category-item tag woods">
+            <%= image_tag "woods-icon.png", class: "img-icon" %>
+            <h5>Woods</h5>
+          </div>
+          <div class="category-item tag mountain">
+            <%= image_tag "mountain-icon.png", class: "img-icon" %>
+            <h5>Mountains</h5>
+          </div>
+          <div class="category-item tag fields">
+            <%= image_tag "fields-icon.png", class: "img-icon" %>
+            <h5>Fields</h5>
+          </div>
+        </div>
       </div>
       <p class="text-left"><%= @treehouses.length < 2 ? "#{ @treehouses.length } result" : "#{ @treehouses.length } results" %></p>
 
