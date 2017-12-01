@@ -1,5 +1,18 @@
 <div class="container">
-  <h1><%= @current_user.email.split("@")[0].capitalize %>'s Dashboard</h1>
+
+  <div class="invite">
+    <div class="invite-content">
+      <i class="fa fa-eur" aria-hidden="true"></i>
+    <h3><em>Earn 50€ credit trip!</em></h3>
+    <p>Share with your friends the Treehouse code: <strong>TH<%= @current_user.email.split("@")[0].capitalize %><%= @current_user.id %></strong></p>
+    <%= link_to ' Share on <i class="fa fa-facebook" aria-hidden="true"></i>'.html_safe, 'https://www.facebook.com/', class: "btn greenbtn btn-primary", target:"_blank" %>
+    </div>
+  </div>
+
+<div class="dash-title">
+   <h2><%= @current_user.email.split("@")[0].capitalize %>'s Dashboard</h2>
+</div>
+
 
   <div class="tabs">
     <a href="#" class="guest tab tab-guest active">I'm Traveling</a>
@@ -76,9 +89,9 @@
           </div>
 
           <div class="message_body">
-            <%= link_to "Accept!", validate_journey_path(journey, status: 'accepted'), class: "btn green btn-success" %>
+            <%= link_to "Accept!", validate_journey_path(journey, status: 'accepted'), class: "btn greenbtn btn-success" %>
             <p></p>
-            <%= link_to "Decline", validate_journey_path(journey, status: 'declined'), class: "btn green btn-danger" %>
+            <%= link_to "Decline", validate_journey_path(journey, status: 'declined'), class: "btn btn-danger" %>
           </div>
 
         </li>

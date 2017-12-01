@@ -1,6 +1,7 @@
 .tabs {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 .tab {
   font-size: 18px;
@@ -13,6 +14,7 @@
 }
 .tab:hover {
   opacity: 1;
+  text-decoration: none;
 }
 
 
@@ -21,5 +23,6 @@
   font-size: 18px;
   font-weight: bold;
   padding: 10px;
-  border-bottom: 5px solid #00A699;
+  border-bottom: 5px solid #119cab;
+  text-decoration: none;
 }
