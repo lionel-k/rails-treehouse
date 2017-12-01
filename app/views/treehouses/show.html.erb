@@ -26,6 +26,8 @@
     <%= @treehouse.description %>
   </div>
 
+
+  <% unless @treehouse.user == current_user %>
   <div class="journey-request">
 
     <!-- bid part -->
@@ -59,8 +61,11 @@
       <% end %>
     </div>
     <!-- fin input bid -->
-
+    <% end %>
   </div>
+
+
+
 </div>
 
 <div id="map" data-markers="<%= @markers.to_json %>"></div>
