@@ -5,13 +5,29 @@ class TreehousesController < ApplicationController
 
   def index
     if params[:treehouses]
-      @search_params = {treehouse_checkin: params[:treehouses][:checkin].first, treehouse_checkout: params[:treehouses][:checkout].first, treehouse_guests_number: params[:treehouses][:guests_number], treehouse_price_per_night: params[:treehouses][:price_per_night]}
-      if params[:treehouses][:location].blank?
+      @search_params = {
+        treehouse_category: params[:treehouses][:category],
+        treehouse_location: params[:treehouses][:location],
+        treehouse_checkin: params[:treehouses][:checkin].first,
+        treehouse_checkout: params[:treehouses][:checkout].first,
+        treehouse_guests_number: params[:treehouses][:guests_number],
+        treehouse_price_per_night: params[:treehouses][:price_per_night]
+      }
+      if @search_params[:treehouse_location].blank?
         @treehouses = Treehouse.all
-      else
+      elsif @search_params[:treehouse_category].blank?
         guests_number =  params[:treehouses][:guests_number].blank? ? 0 : params[:treehouses][:guests_number]
         @treehouses = Treehouse.where("capacity >= ?", guests_number)
-        @treehouses = @treehouses.near(params[:treehouses][:location], 100)
+        @treehouses = @treehouses.near(@search_params[:treehouse_location], 100)
+      else
+        guests_number =  params[:treehouses][:guests_number].blank? ? 0 : params[:treehouses][:guests_number]
+        category_param = @search_params[:treehouse_category]
+        @treehouses = Treehouse.where(
+          "capacity >= :guests_number AND category ILIKE :category",
+          guests_number: guests_number,
+          category: "%#{category_param}%"
+        )
+        @treehouses = @treehouses.near(@search_params[:treehouse_location], 100)
       end
     else
       @treehouses = Treehouse.all

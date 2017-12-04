@@ -8,32 +8,24 @@
       <div class="filters-bar text-center">
         <%= render "shared/form_index" %>
         <div class="categories-container">
-          <div class="category-item tag lake">
-            <%= image_tag "lake-icon.png", class: "img-icon" %>
-            <h5>Lake</h5>
-          </div>
-          <div class="category-item tag family">
-            <%= image_tag "family-icon.png", class: "img-icon" %>
-            <h5>Family</h5>
-          </div>
-          <div class="category-item tag romantic">
-            <%= image_tag "romantic-icon.png", class: "img-icon" %>
-            <h5>Romantic</h5>
-          </div>
-          <div class="category-item tag woods">
-            <%= image_tag "woods-icon.png", class: "img-icon" %>
-            <h5>Woods</h5>
-          </div>
-          <div class="category-item tag mountain">
-            <%= image_tag "mountain-icon.png", class: "img-icon" %>
-            <h5>Mountains</h5>
-          </div>
-          <div class="category-item tag fields">
-            <%= image_tag "fields-icon.png", class: "img-icon" %>
-            <h5>Fields</h5>
-          </div>
+
+          <% ['lake', 'family', 'romantic', 'woods', 'mountains', 'fields'].each do |category| %>
+            <%= link_to treehouses_path(params.to_unsafe_h.merge(:treehouses => {
+              category: category,
+              location: params[:treehouses][:location],
+              checkin: params[:treehouses][:checkin],
+              checkout: params[:treehouses][:checkout],
+              guests_number: params[:treehouses][:guests_number]
+            })) do %>
+            <div class="category-item tag <%= category %>">
+              <%= image_tag "#{category}-icon.png", class: "img-icon" %>
+              <h5><%= category.capitalize %></h5>
+            </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
+
       <p class="text-left"><%= @treehouses.length < 2 ? "#{ @treehouses.length } result" : "#{ @treehouses.length } results" %></p>
 
       <div class="results-cards">

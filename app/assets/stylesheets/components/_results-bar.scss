@@ -59,7 +59,7 @@
 
 .label-form-input {
   background-color: white !important;
-  font-size: 14px;
+  font-size: 12px;
   color: rgba(80, 80, 80, 0.9) !important;
   font-family: "Open Sans", sans-serif !important;
 }
@@ -69,23 +69,23 @@
 }
 
 .large {
-  width: 180px !important;
+  width: 170px !important;
 }
 
 .medium {
-  width: 130px !important;
+  width: 120px !important;
 }
 
 .small {
-  width: 90px !important;
+  width: 80px !important;
   margin-right: 20px !important;
 }
 
 .refresh-btn {
-  font-size: 15px;
+  font-size: 16px;
   background-color: rgba(135, 191, 68, 0.7);
   color: white;
-  font-weight: bolder;
+  font-weight: lighter;
 }
 
 .refresh-btn:hover {
@@ -104,42 +104,43 @@
   padding: 11px;
   margin: 24px 10px 0px 10px;
   flex: 1, 1, auto;
-  border-radius: 4px 70px;
+  border-radius: 4px;
   width: 120px;
 }
 
 .fields {
-  background: linear-gradient(135deg, rgba(255, 126, 95, 1) 0%, rgba(254, 180, 123, 1) 90%);
+  background: linear-gradient(135deg, rgba(255, 126, 95, 0.2) 0%, rgba(254, 180, 123, 0.2) 90%);
 }
 
 .family {
-  background: linear-gradient(135deg, rgba(255, 175, 189, 1) 0%, rgba(255, 195, 160, 1) 90%);
+  background: linear-gradient(135deg, rgba(255, 175, 189, 0.2) 0%, rgba(255, 195, 160, 0.2) 90%);
 }
 
 .lake {
-  background: linear-gradient(135deg, rgba(67, 206, 162, 1) 0%, rgba(24, 90, 157, 1) 90%);
+  background: linear-gradient(135deg, rgba(67, 206, 162, 0.2) 0%, rgba(24, 90, 157, 0.2) 90%);
 }
 
-.mountain {
-  background: linear-gradient(135deg, rgba(255, 216, 155, 1) 0%, rgba(25, 84, 123, 1) 90%);
+.mountains {
+  background: linear-gradient(135deg, rgba(255, 216, 155, 0.2) 0%, rgba(25, 84, 123, 0.2) 90%);
 }
 
 .romantic {
-  background: linear-gradient(135deg, rgba(255, 81, 47, 0.8) 0%, rgba(221, 36, 118, 0.8) 90%);
+  background: linear-gradient(135deg, rgba(255, 81, 47, 0.2) 0%, rgba(221, 36, 118, 0.2) 90%);
 }
 
 .woods {
-  background: linear-gradient(135deg, rgba(86, 171, 47, 1) 0%, rgba(168, 224, 99, 1) 90%);
+  background: linear-gradient(135deg, rgba(86, 171, 47, 0.2) 0%, rgba(168, 224, 99, 0.2) 90%);
 }
 
 .category-item > h5 {
   font-style: "Raleway", sans-serif;
   font-size: 13px;
+  font-weight: bold;
   margin: 5px 20px 0px 20px;
   padding-top: 7px;
   padding-left: 7px;
-  color: rgba(240, 240, 240, 0.9);
-  text-shadow: 1px 1px rgba(200, 200, 200, 0.7);
+  color: rgba(40, 40, 40, 0.9);
+  text-shadow: 1px 1px rgba(200, 200, 200, 0.4);
 }
 
 .img-icon {
