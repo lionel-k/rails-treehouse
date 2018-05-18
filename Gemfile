@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.3.5'
+ruby '2.4.3'
 
-gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
