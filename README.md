@@ -1,1 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# TreeHouse
+
+Rails app built during during the AirBnB Week @ Le Wagon Coding Bootcamp.
