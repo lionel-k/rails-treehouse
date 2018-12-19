@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.4.3'
+ruby '2.4.4'
 
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
-gem 'rails', '5.1.4'
+gem 'rails', '5.1.6.1'
 gem 'redis'
 gem 'devise'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
