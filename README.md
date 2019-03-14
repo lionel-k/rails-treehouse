@@ -1,3 +1,3 @@
 # TreeHouse
 
-Rails app built during during the AirBnB Week @ Le Wagon Coding Bootcamp.
+Rails app built during the AirBnB Week [@Le Wagon Coding Bootcamp](https://www.lewagon.com).
