@@ -11,8 +11,14 @@
     "typed.js": "^2.0.6"
   },
   "devDependencies": {
+    "autoprefixer": "^9.4.10",
+    "cssnano": "^4.1.10",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "sugarss": "^2.0.0",
     "webpack-dev-server": ">=3.1.11"
   }
 }
