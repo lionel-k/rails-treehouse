@@ -12,7 +12,7 @@ gem 'pundit'
 gem 'geocoder'
 gem 'figaro'
 gem 'cloudinary'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '>= 3.4.1'
