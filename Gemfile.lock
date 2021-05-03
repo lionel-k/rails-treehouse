@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 4a0d6c54a8bf9929f6d816631cf749cc019cb13f
+  revision: bcd12d9159817b8c59736513513c4ab7eadd5fe2
   branch: master
   specs:
-    faker (2.10.1)
+    faker (2.18.0)
       i18n (>= 1.6, < 2)
 
 GEM
@@ -74,7 +74,7 @@ GEM
       aws_cf_signer
       rest-client
     coderay (1.1.2)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.8)
     crass (1.0.5)
     devise (4.6.1)
       bcrypt (~> 3.0)
@@ -97,7 +97,7 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.8.2)
+    i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.10.3)
       mini_magick (>= 4.9.5, < 5)
@@ -118,7 +118,9 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.4)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
